@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link href="themes/wingon/onepage-scroll.css" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='jquery.js,json2.js'}
+<script type="text/javascript" src="themes/wingon/history/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="themes/wingon/history/js/jquery.ui.touch-punch.js"></script>
+<script type="text/javascript" src="themes/wingon/history/js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="themes/wingon/history/js/jquery.tipsy.js"></script>
+<script type="text/javascript" src="themes/wingon/history/js/audio.min.js"></script>
+<script type="text/javascript" src="themes/wingon/history/js/s.js"></script>
+<script type="text/javascript" src="themes/wingon/history/js/m.js"></script>
+<link rel='stylesheet' href='themes/wingon/history/css/css.css' type='text/css'>
+<link rel="stylesheet" href="themes/wingon/history/css/tipsy.css" type="text/css">
+<link rel="stylesheet" href="themes/wingon/history/css/prettyPhoto.css" type="text/css" media="all">
+<link rel="stylesheet" href="themes/wingon/history/css/m.css" type="text/css" media="all">
+</head>
+<body><!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem --><!-- #BeginLibraryItem "/library/cart_notice.lbi" --><!-- #EndLibraryItem -->
+<div class="full_page" style="width:100%;height:100%;display:block;margin-top: -4px;color:#000;">
+	<section style="background:url('themes/wingon/images/about_us/bg1.jpg');">
+    	<div style="width:38.2%;font-size:60px;float:left;text-align:right;margin-top:17%;">关于我们</div>
+        <div style="width:35.8%;font-size:16px;float:left;margin-left:20px;border-left:1px solid #414144;margin-top:13.5%;padding-left:30px;margin-left:30px;"><p>Wing On是一间根植于北美的国际性食品、消费品设计、生产、贸易和服务公司，我们在全世界范围内与在食品、消费品研发生产领域的卓越机构结成战略合作伙伴关系，生产POLAR BEAR ，TIGER KING等自主品牌的优质超值产品并代理欧美优质名牌产品在全球范围内销售。</p><p>本公司采用最先进自主研发的基于移动互联网和云计算智能平台的国际连锁分销系统进行全球营销的创新模式，直接供应给对生活品质有着极高要求的消费者。我们不断深入探索革新产品和服务的新技术和新理念，目标成为世界一流的优质食品和消费品的供应商和服务商，成为一个真正掌握现代高科技的知识型跨国企业。</p></div></section>
+    <section style="background:url('themes/wingon/images/about_us/bg2.jpg');">
+    	<div id="timeline_container">
+		<div id="timeline">
+			<div class="viewport">
+				<div class="images"> <img src="themes/wingon/history/images/1.png" alt="" /> <img src="themes/wingon/history/images/2.png" alt="" /> <img src="themes/wingon/history/images/3.png" alt="" /> <img src="themes/wingon/history/images/4.png" alt="" /> <img src="themes/wingon/history/images/5.png" alt="" /> <img src="themes/wingon/history/images/6.png" alt="" /> <img src="themes/wingon/history/images/7.png" alt="" /> <img src="themes/wingon/history/images/8.png" alt="" /> <img src="themes/wingon/history/images/9.png" alt="" /></div>
+			</div>
+			<div class="scrollbar">
+				<div class="track">
+					<div class="marks">
+						<div id="m0" class="mark" data-xpos="500" data-label="2001"></div>
+						<div id="m1" class="mark" data-xpos="800" data-label="2004"></div>
+						<div id="m2" class="mark" data-xpos="900" data-label="2005"></div>
+						<div id="m3" class="mark" data-xpos="1300" data-label="2009"></div>
+                        <div id="m4" class="mark" data-xpos="1400" data-label="2010"></div>
+						<div id="m5" class="mark" data-xpos="1600" data-label="2012"></div>
+						<div id="m6" class="mark" data-xpos="1700" data-label="2013"></div>
+						<div id="m7" class="mark" data-xpos="1800" data-label="2014"></div>
+					</div>
+					<div class="dragger"></div>
+				</div>
+			</div>
+			<div class="milestones">
+				<div class="content">
+					<div class="column_first">
+						<div class="c200"> <span class="date">1996 - STARTUP</span> <span class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, <strong>sed do eiusmod tempor incididunt</strong> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.<br/>
+							<br/>
+							Ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br/>
+							Ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </span> </div>
+					</div>
+					<div class="column">
+						<div class="c125"> <span class="date">1985</span> <span class="txt">Ut enim ad minim veniam, quis nostrud exercitation ullamco.<br/>
+							<br/>
+							Duis aute irure dolor in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </span> <span class="thumb"><a href="#extended_text1" data-rel="prettyPhoto" title=""><img src="themes/wingon/history/images/read_more.png" alt="" class="readmore" title="READ MORE" /></a></span>
+							<div id="extended_text1" class="hidden">
+								<p><strong>Sample of extended content opened with lightbox</strong><br/>
+									<br/>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <a href="http://www.themeforest.net" target="_blank">sample of external link</a>. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="c125"> <span class="date">MARCH 1992</span> <span class="txt">Ut enim ad minim veniam, quis nostrud exercitation ullamco.</span> <span class="date"><br/>
+							NOVEMBER 1999</span> <span class="txt">Duis aute irure dolor in voluptate velit esse.</span> </div>
+					</div>
+					<div class="column">
+						<div class="c125"> <span class="date">2002 - 20 YEARS<br/>
+							ANNIVERSARY VIDEO</span> <span class="thumb"><a href="http://vimeo.com/24492485" data-rel="prettyPhoto" title="20 Years Anniversary Video" class="video_rollover"><img src="themes/wingon/history/images/video_sample_thumb.png" alt="" /></a></span> <span class="thumb_description">Short video description</span> </div>
+					</div>
+					<div class="column">
+						<div class="c150"> <span class="date">2005</span> <span class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span> <span class="big_link"><a href="themes/wingon/history/images/gallery_sample_02.jpg" data-rel="prettyPhoto[sample_gallery]" title="Gallery sample 01">> IMAGE GALLERY</a></span>
+							<div class="hidden"> <a href="themes/wingon/history/images/gallery_sample_01.jpg" data-rel="prettyPhoto[sample_gallery]" title="Gallery sample 02"></a> <a href="themes/wingon/history/images/gallery_sample_03.jpg" data-rel="prettyPhoto[sample_gallery]" title="Gallery sample 03"></a> </div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="c125"> <span class="date">2006 - WPA PARTNERS</span> <span class="txt">Sample of external links:</span> <span class="link"><br/>
+							<a href="http://themeforest.net/user/pezflash" target="_blank">www.envato.com</a></span> <span class="link"><a href="http://themeforest.net/user/pezflash" target="_blank">www.themeforest.net</a></span> <span class="link"><a href="http://themeforest.net/user/pezflash" target="_blank">www.codecanyon.net</a></span> </div>
+					</div>
+					<div class="column">
+						<div class="c225"> <span class="date">2010 - WIDE COLUMN SAMPLE</span> <span><img src="themes/wingon/history/images/logos.png" alt="" /></span> <span class="txt">Ut enim ad minim veniam, quis nostrud exercit ullamco. Duis aute irure dolor in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </span> <span class="thumb"><a href="#extended_text2" data-rel="prettyPhoto" title=""><img src="themes/wingon/history/images/read_more.png" alt="" class="readmore" title="READ MORE" /></a></span>
+							<div id="extended_text2" class="hidden">
+								<p><strong>Sample of extended content opened with lightbox</strong><br/>
+									<br/>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <a href="http://www.themeforest.net" target="_blank">sample of external link</a>. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="c125"> <span class="date">2012 - PRESENT</span> <span class="thumb"><a href="themes/wingon/history/images/gallery_sample_01.jpg" data-rel="prettyPhoto[sample_gallery2]" title="10 Years Anniversary Video" class="image_rollover"><img src="themes/wingon/history/images/image_sample_thumb.png" alt="" /></a></span> <span class="thumb_description">Image description</span>
+							<div class="hidden"> <a href="themes/wingon/history/images/gallery_sample_02.jpg" data-rel="prettyPhoto[sample_gallery2]" title="Gallery sample 02"></a> <a href="themes/wingon/history/images/gallery_sample_03.jpg" data-rel="prettyPhoto[sample_gallery2]" title="Gallery sample 03"></a> </div>
+						</div>
+					</div>
+                    <div class="column">
+						<div class="c125"> <span class="date">2012 - PRESENT</span> <span class="thumb"><a href="themes/wingon/history/images/gallery_sample_01.jpg" data-rel="prettyPhoto[sample_gallery2]" title="10 Years Anniversary Video" class="image_rollover"><img src="themes/wingon/history/images/image_sample_thumb.png" alt="" /></a></span> <span class="thumb_description">Image description</span>
+							<div class="hidden"> <a href="themes/wingon/history/images/gallery_sample_02.jpg" data-rel="prettyPhoto[sample_gallery2]" title="Gallery sample 02"></a> <a href="themes/wingon/history/images/gallery_sample_03.jpg" data-rel="prettyPhoto[sample_gallery2]" title="Gallery sample 03"></a> </div>
+						</div>
+					</div>
+                    <div class="column">
+						<div class="c125"> <span class="date">2012 - PRESENT</span> <span class="thumb"><a href="themes/wingon/history/images/gallery_sample_01.jpg" data-rel="prettyPhoto[sample_gallery2]" title="10 Years Anniversary Video" class="image_rollover"><img src="themes/wingon/history/images/image_sample_thumb.png" alt="" /></a></span> <span class="thumb_description">Image description</span>
+							<div class="hidden"> <a href="themes/wingon/history/images/gallery_sample_02.jpg" data-rel="prettyPhoto[sample_gallery2]" title="Gallery sample 02"></a> <a href="themes/wingon/history/images/gallery_sample_03.jpg" data-rel="prettyPhoto[sample_gallery2]" title="Gallery sample 03"></a> </div>
+						</div>
+					</div>
+                    <div class="column">
+						<div class="c125"> <span class="date">2012 - PRESENT</span> <span class="thumb"><a href="themes/wingon/history/images/gallery_sample_01.jpg" data-rel="prettyPhoto[sample_gallery2]" title="10 Years Anniversary Video" class="image_rollover"><img src="themes/wingon/history/images/image_sample_thumb.png" alt="" /></a></span> <span class="thumb_description">Image description</span>
+							<div class="hidden"> <a href="themes/wingon/history/images/gallery_sample_02.jpg" data-rel="prettyPhoto[sample_gallery2]" title="Gallery sample 02"></a> <a href="themes/wingon/history/images/gallery_sample_03.jpg" data-rel="prettyPhoto[sample_gallery2]" title="Gallery sample 03"></a> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+        
+        
+    </section>
+    <section id="our_brands" style="background:url('themes/wingon/images/about_us/bg3.jpg');">
+    	<div  style="max-width:1140px;">
+    		<div style="font-size:18px;margin-top:80px;margin-bottom:80px;">
+            	<p>在爱斯基摩人神话里北极被认为是找寻快乐与幸福之地，那里的人们彼此互助分享生命之水，晶莹剔透的白雪和通澈的寒冰造就了神秘而又美丽的北极。极地熊以高雅壮观、丰容伟仪、足智多谋、顽强不屈、勇敢搏击的形象成为这片神秘国度生机与活力的物种代表，是这个冰雪世界生灵的主宰者并确定了自己无可争议的统治地位。极地熊也是加拿大自由、强壮，耐力、力量、尊严的象征，深受加拿大人民的喜爱和尊重。</p>
+            	<p>我们极地熊（POLAR BEAR）品牌也是极地熊精神的传承者和载体，通过我们品牌的商业运作赋予产品巨大无比的生命力和创造力，给世界人民带来幸福和快乐。同时，通过这一品牌的宣传推广提高保护北极这世界上唯一古老神秘的净土的意识，关注以极地熊为代表的千百年生活繁衍在这块土地上的族群，它们所延续下来的古老的生存方式正在面临着前所未有的全球变暖的北极浮冰正以想象不到的速度消失危险，北极属生态系统极端脆弱区，而且比地球上任何一个地方都更加脆弱，在看似原始的北极环境中，北极熊也受到了扰乱荷尔蒙的化学物质的扩散和全球变暖趋势的威胁。全球变暖趋势影响着北极冰层的生态系统，也影响着海象、海豹、企鹅以及极地熊的生存。我们的极地熊保护基金将积极参与、改善北极熊和其它物种赖以生存的生态系统的管理活动中，保护北极保护极地熊已成为人类的重要使命。</p> 
+            </div>
+            <div class="lougo" style="opacity:0;transition: opacity 1s ease-in-out;-moz-transition: opacity 1s ease-in-out;-webkit-transition: opacity 1s ease-in-out;" class="fade-in one"><img src="images/about_us/logo1.png"/></div>
+            <div class="lougo" style="opacity:0;transition: opacity 2s ease-in-out;-moz-transition: opacity 2s ease-in-out;-webkit-transition: opacity 2s ease-in-out;" class="fade-in one"><img src="images/about_us/l2.png"/></div>
+            <div class="lougo" style="opacity:0;transition: opacity 2s ease-in-out;-moz-transition: opacity 2s ease-in-out;-webkit-transition: opacity 2s ease-in-out;" class="fade-in one"><img src="images/about_us/l3.png"/></div>
+        </div>
+    </section>
+    <section style="">
+    	为什么
+    </section>
+</div>
+
+  <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<script src="js/jquery.onepage-scroll.js"></script>
+<script type="text/javascript">
+      
+	  
+	  /*function funct(){
+	  	
+	  	if($("#our_brands").hasClass('active')){
+			alert('yeah');
+	  	}
+		else{
+			alert('no');
+		}
+	  }
+	  
+	  var t= document.getElementById("our_brands");
+	  t.addEventListener('scroll',funct,false);
+	  */
+	  
+	  $("#our_brands").ready(function(e) {
+	  var tt = $("#our_brands").offset().top;
+	  var interval = setInterval(function() {
+	if($("#our_brands").hasClass('active')){
+			$(".lougo").css("opacity","1");
+			clearInterval(interval);
+	  	}
+}, 1500);
+    });
+	  
+	  $(".full_page").onepage_scroll({
+        sectionContainer: "section",
+        responsiveFallback: 600,
+        loop: false
+      });
+</script>
+
+</body>
+</html>

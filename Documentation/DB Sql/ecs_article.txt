@@ -1,0 +1,5 @@
+ALTER TABLE `ecs_article` ADD `title_en` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `title`;
+ALTER TABLE `ecs_article` ADD `content_en` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `content`;
+ALTER TABLE `ecs_article` ADD `description_en` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `description`;
+
+ALTER TABLE `ecs_article` ADD `article_date` DATE NOT NULL AFTER `title_en`;

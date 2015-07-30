@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link href="portfolio.css" rel="stylesheet" type="text/css" />
+<link href="icomoon.css" rel="stylesheet" type="text/css" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,index.js,jquery.js,jquery.lazyload.js,jssor.js,jssor.slider.js,vertical_nav.js,onload.js,isotope.js,isotope-custom.js,jquery.prettyPhoto.js'}
+{insert_scripts files='jquery.countdown.min.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" -->
+<!-- #BeginLibraryItem "/library/help.lbi" -->
+<!-- #EndLibraryItem -->
+	<div class="block clearfix" style="max-width: none;">
+		<!-- #BeginLibraryItem "/library/index_category_tree.lbi" --><!-- #EndLibraryItem -->
+		<div id="products_first_row_wrap">
+	    	<div class="left_triple_ads" id="product_main_triple_ads">
+			
+			{foreach from=$group_buy_goods item=item key=key}
+			
+	        	<div style="background:url('{$item.img_url}'); font-size:200%; height: 33.33%; position: relative; overflow: hidden;">
+					<div><h5>{$item.short_name}</h5></div>
+					<!--<img src="{$item.goods_img}" alt="Smiley face" width="200"></img>-->
+					<div class="gb_price">{$item.last_price}<span style="text-decoration: line-through; font-size: 14px; text-align: right;"><br>{$_LANG.ori_price}{$item.shop_price}</span></div>
+					<a href="{$item.url}" style="text-decoration:none;color: #ffffff!important;"><div class="gb_buy_button">{$_LANG.buynow}</div></a>
+					<div class="count_down_timer">{$_LANG.limittime_left}<span id="getting-started-{$key}"></span></div>
+			  		 <script type="text/javascript">
+			  		var temp = "{$item.end_time}";
+			  		temp = temp.replace(/-/g, "/");
+			  		   $("#getting-started-{$key}").countdown(temp, function(event) {
+			  		     $(this).text(
+			  		       event.strftime('%-D{$_LANG.day}%H{$_LANG.hour}%M{$_LANG.minute}%S{$_LANG.second}')
+			  		     );
+			  		   }); 
+
+			  		</script>
+				</div>
+			{/foreach}	
+	        </div>
+		
+		<div id="product_main_slide" style=" width: 75%; height: 100%; font-size: 10em;">
+			    <script>
+	        jssor_slider1_starter = function (containerId,AutoPlay,drag,fullwidthParam) {
+	           if(AutoPlay == ''){AutoPlay = false;}
+	           if(drag == ''){drag = 0;}
+	           if(fullwidthParam == ''){fullwidthParam = 1;}
+		   
+	            var options = {
+	                $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
+	                $AutoPlay: AutoPlay,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+	                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+	                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+	                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+	                $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+	                $SlideDuration: 800,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+	                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+	                //$SlideWidth: 788,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+	                //$SlideHeight: 600,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+	                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+	                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+	                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+	                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+	                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+	                $DragOrientation: drag,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+               
+
+	                $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
+	                    $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
+	                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+	                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+	                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+	                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+	                    $SpacingX: 8,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+	                    $SpacingY: 100,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+	                    $Orientation: 1,                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+	                    $Scale: false                                   //Scales bullets navigator or not while slider scale
+	                },
+
+	                $ArrowNavigatorOptions: {                       //[Optional] Options to specify and enable arrow navigator or not
+	                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+	                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+	                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+	                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+	                }
+	            };
+
+	            var jssor_slider1 = new $JssorSlider$(containerId, options);
+
+	            //responsive code begin
+	            //you can remove responsive code if you don't want the slider scales while window resizes
+	            function ScaleSlider() {
+	                var bodyWidth = document.body.clientWidth;
+	                if (bodyWidth>766){
+						
+	                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, bodyWidth*fullwidthParam));
+					} else if (bodyWidth <=766 ){
+						jssor_slider1.$ScaleWidth(Math.min(bodyWidth, bodyWidth));
+						jQuery('#product_main_slide').insertBefore('#product_main_triple_ads');
+					}
+	                else{
+	                    window.setTimeout(ScaleSlider, 30);
+					}
+	            }
+	            ScaleSlider();
+
+	            $(window).bind("load", ScaleSlider);
+	            $(window).bind("resize", ScaleSlider);
+	            $(window).bind("orientationchange", ScaleSlider);
+	            //responsive code end
+	        };
+			    </script>
+			    <!-- Jssor Slider Begin -->
+			    <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
+			   <div id="home-slider-wrap" style="margin: 0 auto;
+			           left: 0px; width: 800px; height: 500px; overflow: hidden;">
+			          <!-- Loading Screen -->
+			          <div u="loading" style="position: absolute;  left: 0px;">
+			              <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+			                   left: 0px; width: 100%; height: 100%;">
+			              </div>
+			              <div style="position: absolute; display: block; background: url(images/loading.gif) no-repeat center center;
+			                   left: 0px; width: 100%; height: 100%;">
+			              </div>
+			          </div>
+			          <!-- Slides Container -->
+			          <div u="slides" style="cursor: move; position: absolute; left: 0px;  width: 800px;
+			              height: 500px; overflow: hidden;" class="products_slides_img_outer">
+										{insert name='ads' id=2 num=''}
+	
+			          </div>
+                
+			          <!-- Bullet Navigator Skin Begin -->
+			          <style>
+			              /* jssor slider bullet navigator skin 21 css */
+			              /*
+			              .jssorb21 div           (normal)
+			              .jssorb21 div:hover     (normal mouseover)
+			              .jssorb21 .av           (active)
+			              .jssorb21 .av:hover     (active mouseover)
+			              .jssorb21 .dn           (mousedown)
+			              */
+			              .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av
+			              {
+			                  background: url(images/b21-rec.png) no-repeat;
+			                  overflow:hidden;
+			                  cursor: pointer;
+			              }
+			              .jssorb21 div { background-position: -5px -5px; }
+			              .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+			              .jssorb21 .av { background-position: -65px -5px; }
+			              .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
+			          </style>
+			          <!-- bullet navigator container -->
+			          <div u="navigator" class="jssorb21" style="position: absolute; bottom:30px; left: 45%;">
+			              <!-- bullet navigator item prototype -->
+			              <div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
+			          </div>
+			          <!-- Bullet Navigator Skin End -->
+
+			          <!-- Arrow Navigator Skin Begin -->
+			          <style>
+			              /* jssor slider arrow navigator skin 21 css */
+			              /*
+			              .jssora21l              (normal)
+			              .jssora21r              (normal)
+			              .jssora21l:hover        (normal mouseover)
+			              .jssora21r:hover        (normal mouseover)
+			              .jssora21ldn            (mousedown)
+			              .jssora21rdn            (mousedown)
+			              */
+			              .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn
+			              {
+			              	position: absolute;
+			              	cursor: pointer;
+			              	display: block;
+			                  background: url(images/a13.png) center center no-repeat;
+			                  overflow: hidden;
+			              }
+			              .jssora21l { background-position: -3px -33px; }
+			              .jssora21r { background-position: -63px -33px; }
+			              .jssora21l:hover { background-position: -123px -33px; }
+			              .jssora21r:hover { background-position: -183px -33px; }
+			              .jssora21ldn { background-position: -123px -33px; }
+			              .jssora21rdn { background-position: -183px -33px; }
+			          </style>
+			          <!-- Arrow Left -->
+			          <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
+			          </span>
+			          <!-- Arrow Right -->
+			          <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
+			          </span>
+			          <!-- Arrow Navigator Skin End -->
+			          <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+			      </div>
+		</div>
+
+    <script>
+        jssor_slider1_starter('home-slider-wrap',true,1,0.75);
+    </script>	    
+	    </div>
+		
+	</div>
+
+		<div class="logo_display" style="width: 100%;   text-align: center;">
+			
+
+				    <!-- Jssor Slider Begin -->
+				    <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
+				   <div id="home-slider-wrap2" style="margin: 0 auto; left: 0px; width: 800px; height: 50px; overflow: hidden;">
+				          <!-- Loading Screen -->
+				          <div u="loading" style="position: absolute;  left: 0px;">
+				              <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+				                   left: 0px; width: 100%; height: 100%;">
+				              </div>
+				              <div style="position: absolute; display: block; background: url(images/loading.gif) no-repeat center center;
+				                   left: 0px; width: 100%; height: 100%;">
+				              </div>
+				          </div>
+				          <!-- Slides Container -->
+				          <div u="slides" style="cursor: move; position: absolute; left: 0px;  width: 800px;
+				              height: 100px; overflow: hidden;" class="products_slides_img_outer">
+  
+							  
+							  {foreach from=$brand_logo.arry item=page_item key=page_key}
+							 	 <div style="width:100%">
+									 <table>
+				
+								  		<tr>
+										{foreach from=$page_item item=item key=key}
+										{if $item.brand_logo neq ''}
+								            <td><img u="image" alt="{$item.brand_name}" src="{$item.brand_logo}"  width="80"/></td>
+											{else}
+											<td></td>
+										{/if}
+										{/foreach}											
+										</tr>
+										
+									 </table>
+								</div>
+								{/foreach}
+
+								  
+				          </div>
+                
+				          
+
+				          <!-- Arrow Navigator Skin Begin -->
+				          <style>
+				              /* jssor slider arrow navigator skin 21 css */
+				              /*
+				              .jssora21l              (normal)
+				              .jssora21r              (normal)
+				              .jssora21l:hover        (normal mouseover)
+				              .jssora21r:hover        (normal mouseover)
+				              .jssora21ldn            (mousedown)
+				              .jssora21rdn            (mousedown)
+				              */
+				              .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn
+				              {
+				              	position: absolute;
+				              	cursor: pointer;
+				              	display: block;
+				                  background: url(images/a01.png) center center no-repeat;
+				                  overflow: hidden;
+				              }
+				              .jssora21l { background-position: -3px -33px; }
+				              .jssora21r { background-position: -63px -33px; }
+				              .jssora21l:hover { background-position: -123px -33px; }
+				              .jssora21r:hover { background-position: -183px -33px; }
+				              .jssora21ldn { background-position: -123px -33px; }
+				              .jssora21rdn { background-position: -183px -33px; }
+				          </style>
+				          <!-- Arrow Left -->
+				          <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
+				          </span>
+				          <!-- Arrow Right -->
+				          <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
+				          </span>
+				          <!-- Arrow Navigator Skin End -->
+				          <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+				      </div>
+			</div>
+
+	    <script>
+	        jssor_slider1_starter('home-slider-wrap2',false,1,1);
+	    </script>	    
+		    </div>
+		
+		
+
+
+	    
+
+		</div>
+
+
+
+		
+		<section class="latest-works">
+    <nav class="primary clearfix" style="text-decoration: none;">
+         <div class="portfolioFilters">
+           <a href="#" class="selected" data-filter="*">{$_LANG.all_attribute} </a>
+           <a class="" href="#" data-filter=".new">{$_LANG.new_goods}</a>
+           <a class="" href="#" data-filter=".hot">{$_LANG.hot_goods}</a>
+           <a class="" href="#" data-filter=".best">{$_LANG.best_goods}</a>
+   		</div>
+       </nav>	
+		
+		
+		
+		
+		<div class="portfolio" style="z-index: 0;">
+			<!--{foreach from=$hot_goods item=hg}-->
+			<figure class="portfolio-item hot">
+				<div class="img-item"> <img src="/wingwing/{$hg.goods_img}" alt="" >
+				<div class="zoomex2"><h6>{$hg.name}<br><small>{$hg.shop_price}</small></h6><a href="/wingwing/{$hg.goods_img}" class="prettyPhoto zoomlink1" ><i class="icomoon-plus"></i></a><a href="portfolio-item.html" class="zoomlink2" ><i class="icomoon-arrow-right-5"></i></a></div></div>
+					
+			</figure>
+			<!--{/foreach}-->
+			
+			<!--{foreach from=$new_goods item=ng}-->
+			<figure class="portfolio-item new">
+				<div class="img-item"> <img src="/wingwing/{$ng.goods_img}" alt="" >
+				<div class="zoomex2"><h6>{$ng.name}<br><small>{$ng.shop_price}</small></h6><a href="/wingwing/{$ng.goods_img}" class="prettyPhoto zoomlink1" ><i class="icomoon-plus"></i></a><a href="portfolio-item.html" class="zoomlink2" ><i class="icomoon-arrow-right-5"></i></a></div></div>
+					
+			</figure>
+			<!--{/foreach}-->
+			
+			<!--{foreach from=$best_goods item=bg}-->
+			<figure class="portfolio-item best">
+				<div class="img-item"> <img src="/wingwing/{$bg.goods_img}" alt="" >
+				<div class="zoomex2"><h6>{$bg.name}<br><small>{$bg.shop_price}</small></h6><a href="/wingwing/{$bg.goods_img}" class="prettyPhoto zoomlink1" ><i class="icomoon-plus"></i></a><a href="portfolio-item.html" class="zoomlink2" ><i class="icomoon-arrow-right-5"></i></a></div></div>
+					
+			</figure>
+			<!--{/foreach}-->
+			
+		  
+		    
+		</div>
+		<script src="js/jquery.prettyPhoto.js" ></script>
+	</section>
+		<script>
+		  
+		  
+		  
+		  
+		  
+		  /* ---------------------------------------------------------------------- */
+		  /*		PrettyPhoto
+		  /* ---------------------------------------------------------------------- */
+
+
+		  jQuery(document).ready(function($){
+    
+		  	    /* --------- */
+		  		/* Add PrettyPhoto */
+		  		/* ------------------------ */
+		
+		  		var lightboxArgs = {			
+		  						animation_speed: 'fast',
+		  						overlay_gallery: true,
+		  			autoplay_slideshow: false,
+		  						slideshow: 5000, /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+		  									theme: 'pp_default', 
+		  									opacity: 0.8,
+		  						show_title: false,
+		  			social_tools: "",			deeplinking: false,
+		  			allow_resize: true, 			/* Resize the photos bigger than viewport. true/false */
+		  			counter_separator_label: '/', 	/* The separator for the gallery counter 1 "of" 2 */
+		  			default_width: 940,
+		  			default_height: 529
+		  		};
+
+		  		if(jQuery('a[href$=jpg], a[href$=JPG], a[href$=jpeg], a[href$=JPEG], a[href$=png], a[href$=gif], a[href$=bmp]:has(img), a[class^="prettyPhoto"]').length){
+		  			jQuery('a[href$=jpg], a[href$=JPG], a[href$=jpeg], a[href$=JPEG], a[href$=png], a[href$=gif], a[href$=bmp]:has(img), a[class^="prettyPhoto"]').prettyPhoto(lightboxArgs);
+		  		}
+		  		if(jQuery("a[rel^='prettyPhoto']").length){
+		  			jQuery("a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'pp_default',slideshow:3000, autoplay_slideshow: false});
+		  		}
+		
+		  });
+		</script>
+		
+		
+		
+		<!-- #BeginLibraryItem "/library/page_footer.lbi" -->
+		<!-- #EndLibraryItem -->
+		
+</body>

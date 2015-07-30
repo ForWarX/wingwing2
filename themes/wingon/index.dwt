@@ -1,0 +1,550 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,index.js,jquery.min.js,jquery.lazyload.js,jssor.js,jssor.slider.js,vertical_nav.js,onload.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" -->
+<!-- #BeginLibraryItem "/library/help.lbi" -->
+<!-- #EndLibraryItem -->
+	
+	
+	
+	
+	
+<div id="index_first_row_wrap" style="margin-bottom:10px;">	
+		<script>
+        jssor_category_slide_starter = function (containerId,AutoPlay,drag) {
+           if(AutoPlay == ''){AutoPlay = false;}
+           if(drag == ''){drag = 0;}
+		   
+		   
+		   /* var _CaptionTransitions = [];
+            _CaptionTransitions["L"] = { $Duration: 900, x: 0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["R"] = { $Duration: 900, x: -0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["T"] = { $Duration: 900, y: 0.6, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["B"] = { $Duration: 900, y: -0.6, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
+            _CaptionTransitions["ZMF|10"] = { $Duration: 900, $Zoom: 11, $Easing: { $Zoom: $JssorEasing$.$EaseOutQuad, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 };
+            _CaptionTransitions["RTT|10"] = { $Duration: 900, $Zoom: 11, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseOutQuad, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInExpo }, $Opacity: 2, $Round: { $Rotate: 0.8} };
+            _CaptionTransitions["RTT|2"] = { $Duration: 900, $Zoom: 3, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInQuad }, $Opacity: 2, $Round: { $Rotate: 0.5} };
+            _CaptionTransitions["RTTL|BR"] = { $Duration: 900, x: -0.6, y: -0.6, $Zoom: 11, $Rotate: 1, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $Opacity: 2, $Round: { $Rotate: 0.8} };
+            _CaptionTransitions["CLIP|LR"] = { $Duration: 900, $Clip: 15, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic }, $Opacity: 2 };
+            _CaptionTransitions["MCLIP|L"] = { $Duration: 900, $Clip: 1, $Move: true, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic} };
+            _CaptionTransitions["MCLIP|R"] = { $Duration: 900, $Clip: 2, $Move: true, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic} };*/
+		   
+		   
+            var options = {
+                $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
+                $AutoPlay: AutoPlay,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+                $SlideDuration: 800,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 788,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: drag,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+               
+
+                $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 8,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 100,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1,                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                    $Scale: false                                   //Scales bullets navigator or not while slider scale
+                },
+
+                $ArrowNavigatorOptions: {                       //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$(containerId, options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var bodyWidth = document.body.clientWidth;
+                if (bodyWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, bodyWidth));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        };
+		
+		
+		
+    </script>
+
+ <div id="home-slider-wrap" style="position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 1300px; height: 310px; overflow: hidden;">
+        <!-- Loading Screen -->
+        <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
+            </div>
+            <div style="position: absolute; display: block; background: url(images/loading.gif) no-repeat center center;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
+            </div>
+        </div>
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px;
+            height: 310px; overflow: hidden;">
+           		 
+		{insert name='ads' id=1 num=''}
+	
+        </div>
+                
+        <!-- Bullet Navigator Skin Begin -->
+        <style>
+            /* jssor slider bullet navigator skin 21 css */
+            /*
+            .jssorb21 div           (normal)
+            .jssorb21 div:hover     (normal mouseover)
+            .jssorb21 .av           (active)
+            .jssorb21 .av:hover     (active mouseover)
+            .jssorb21 .dn           (mousedown)
+            */
+            .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av
+            {
+                background: url(images/b21-rec.png) no-repeat;
+                overflow:hidden;
+                cursor: pointer;
+            }
+            .jssorb21 div { background-position: -5px -5px; }
+            .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+            .jssorb21 .av { background-position: -65px -5px; }
+            .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
+        </style>
+        <!-- bullet navigator container -->
+        <div u="navigator" class="jssorb21" style="position: absolute; bottom:10px; left: 45%;">
+            <!-- bullet navigator item prototype -->
+            <div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
+        </div>
+        <!-- Bullet Navigator Skin End -->
+
+        <!-- Arrow Navigator Skin Begin -->
+        <style>
+            /* jssor slider arrow navigator skin 21 css */
+            /*
+            .jssora21l              (normal)
+            .jssora21r              (normal)
+            .jssora21l:hover        (normal mouseover)
+            .jssora21r:hover        (normal mouseover)
+            .jssora21ldn            (mousedown)
+            .jssora21rdn            (mousedown)
+            */
+            .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn
+            {
+            	position: absolute;
+            	cursor: pointer;
+            	display: block;
+                background: url(images/a13.png) center center no-repeat;
+                overflow: hidden;
+            }
+            .jssora21l { background-position: -3px -33px; }
+            .jssora21r { background-position: -63px -33px; }
+            .jssora21l:hover { background-position: -123px -33px; }
+            .jssora21r:hover { background-position: -183px -33px; }
+            .jssora21ldn { background-position: -123px -33px; }
+            .jssora21rdn { background-position: -183px -33px; }
+        </style>
+        <!-- Arrow Left -->
+        <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
+        </span>
+        <!-- Arrow Right -->
+        <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
+        </span>
+        <!-- Arrow Navigator Skin End -->
+        <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+    </div>
+    <!-- Jssor Slider End -->
+
+    <!-- Trigger -->
+    <script>
+        jssor_category_slide_starter('home-slider-wrap',true,1);
+    </script>
+    <!-- Jssor Slider End -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="block" style="height:80px;">
+</div>
+
+
+<script>
+</script>
+
+
+
+
+<div id="index_second_row_wrap" style="margin-bottom:10px;">
+<div class="cell-container">
+<!--动态新闻-->
+<div class="cell middle-area" style="">
+<div class="char"><a class="icon icon-news" href="#"></a>
+<div class="cell-content">
+<div class="cell-content-div">{$_LANG.dynamic_news}</div>
+<p class="cell-content-p">Easiest and quickest way to create a website very fast.</p>
+</div>
+</div>
+</div>
+<!--关于我们-->
+<div class="cell middle-area" style="">
+<div class="char"><a class="icon icon-company" href="#"></a>
+<div class="cell-content">
+<div class="cell-content-div">{$_LANG.company_intro}</div>
+<p class="cell-content-p">{$_LANG.company_intro_content}</p>
+</div>
+</div>
+</div>
+<!--联系表单-->
+<div class="cell middle-area" style="">
+<div class="char"><a class="icon icon-contact-form" onclick="scrollToElement('contact-form')"></a>
+<div class="cell-content">
+<div class="cell-content-div">{$_LANG.contact_us}</div>
+<div class="contact-form-div">
+<form id="contact-form" class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+
+
+<!-- Text input-->
+<div class="control-group">
+<table border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+<tr height="10"><td colspan="4"></td></tr>
+<tr>
+<td style="width:5%;">
+</td>
+<td style="text-align:left;width:25%;vertical-align:top;">
+  <label class="control-label" for="contact-name"><i class="glyphicon glyphicon-user"></i>&nbsp;{$_LANG.contact_form_name}</label>
+</td>
+<td style="text-align:right;">
+  <div class="controls">
+    <input id="contact-name" name="contact-name" type="text" placeholder="{$_LANG.contact_form_name_placeholder}" class="input" style="width: 80%;">
+    
+  </div>
+</td>
+<td style="width:5%;">
+</td>
+</tr>
+<tr height="10"><td colspan="4"></td></tr>
+</table> 
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+<table border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+<tr>
+<td style="width:5%;">
+</td>
+<td style="text-align:left;width:25%;vertical-align:top;">
+  <label class="control-label" for="contact-email"><i class="glyphicon glyphicon-envelope"></i>&nbsp;{$_LANG.contact_form_email}</label>
+</td>
+<td style="text-align:right;">
+  <div class="controls">
+    <input id="contact-email" name="contact-email" type="text" placeholder="John@mail.com" class="input" style="width: 80%;">
+    
+  </div>
+</td>
+<td style="width:5%;">
+</td>
+</tr>
+<tr height="10"><td colspan="4"></td></tr>
+</table>  
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+<table border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+<tr>
+<td style="width:5%;">
+</td>
+<td style="text-align:left;width:25%;vertical-align:top;">
+  <label class="control-label" for="contact-subject"><i class="glyphicon glyphicon-subtitles"></i>&nbsp;{$_LANG.contact_form_subject}</label>
+</td>
+<td style="text-align:right;">
+  <div class="controls">
+    <input id="contact-subject" name="contact-subject" type="text" placeholder="{$_LANG.contact_form_subject_placeholder}" class="input" style="width: 80%;">
+    
+  </div>
+</td>
+<td style="width:5%;">
+</td>
+</tr>
+<tr height="10"><td colspan="4"></td></tr>
+</table> 
+</div>
+
+<!-- Textarea -->
+<div class="control-group">
+<table border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+<tr>
+<td style="width:5%;">
+</td>
+<td style="text-align:left;width:25%;vertical-align:top;">
+  <label class="control-label" for="contact-content"><i class="glyphicon glyphicon-pencil"></i>&nbsp;{$_LANG.contact_form_content}</label>
+</td>
+<td style="text-align:right;">
+  <div class="controls">                     
+    <textarea id="contact-content" name="contact-content"  style="width: 80%;" placeholder="{$_LANG.contact_form_content_placeholder}"></textarea>
+  </div>
+</td>
+<td style="width:5%;">
+</td>
+</tr>
+<tr height="10"><td colspan="4"></td></tr>
+</table> 
+</div>
+
+<!-- Button -->
+<div class="control-group">
+<table border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+<tr>
+<td style="width:5%;">
+</td>
+<td style="text-align:left;width:25%;vertical-align:top;">
+  <label class="control-label" for="contact-submit"></label>
+</td>
+<td style="text-align:right;">
+  <div class="controls">
+    <button id="contact-submit" name="contact-submit" class="btn btn-default" onclick="submitMail();return false;">{$_LANG.contact_form_submit}</button>
+  </div>
+</td>
+<td style="width:5%;">
+</td>
+</tr>
+<tr height="10"><td colspan="4"></td></tr>
+</table> 
+</div>
+
+</fieldset>
+</form>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="mail-resp">
+  
+</div>
+
+<script>
+/*jQuery('.icon-settings').mouseover(function() {
+  $( this ).fadeOut( 100 );
+});
+jQuery('.icon-settings').mouseout(function() {
+  $( this ).fadeIn( 500 );
+});*/
+</script>
+
+
+
+
+
+
+
+
+<div class="block" style="height:80px;">
+</div>
+
+
+
+
+
+
+
+<div id="index_third_row_wrap">
+<section id="map">
+<div class="map-frame content-container  embed-container  maps" style="/*width:90%;margin:0 auto;*/">
+<iframe style="pointer-events: none;" src="https://maps.google.ca/maps?q=351+ferrier+street+unit+6&amp;ie=UTF8&amp;hq=&amp;hnear=351+Ferrier+St+%236,+Markham,+Ontario+L3R+2Z5&amp;gl=ca&amp;t=m&amp;ll=43.820657,-79.330559&amp;spn=0.121378,0.384521&amp;z=12&amp;iwloc=A&amp;output=embed" width="100%" height="490" frameborder="0" style="border:0"></iframe>
+</div>
+</section>
+<div class="contact-info" style="padding:2%;font-size:1.2em;">
+Address: Unit 6, 351 Ferrier Street, Markham. ON. L3R5Z2
+<br>
+Phone: (905) 604-4677 
+<br>
+Email: sales@wingon.ca
+</div>
+</div>
+
+
+<script>
+  // Disable scroll zooming and bind back the click event
+  var onMapMouseleaveHandler = function (event) {
+    var that = $(this);
+
+    that.on('click', onMapClickHandler);
+    that.off('mouseleave', onMapMouseleaveHandler);
+    that.find('iframe').css("pointer-events", "none");
+  }
+
+  var onMapClickHandler = function (event) {
+    var that = $(this);
+
+    // Disable the click handler until the user leaves the map area
+    that.off('click', onMapClickHandler);
+
+    // Enable scrolling zoom
+    that.find('iframe').css("pointer-events", "auto");
+
+    // Handle the mouse leave event
+    that.on('mouseleave', onMapMouseleaveHandler);
+  }
+
+  // Enable map zooming with mouse scroll when the user clicks the map
+  $('.maps.embed-container').on('click', onMapClickHandler);
+  
+  
+  
+  
+  
+  
+  
+  
+  	function submitMail() {
+
+		var subject = document.getElementById('contact-subject').value;
+		var content = document.getElementById('contact-content').value;
+		var email = document.getElementById('contact-email').value;
+		var name = document.getElementById('contact-name').value;
+		
+		var error = '';
+		var error_for_ie8_and_below = '';
+		
+		if (email == ''){
+			error += '<li><font style="font-size:1.4em;">' + "{$_LANG.contact_email_empty}" + '</font></li>';
+			error_for_ie8_and_below += '{$_LANG.contact_email_empty}\n';
+		}
+		else {
+			var email_exp = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+			if(!email.match(email_exp)) {
+				error += '<li><font style="font-size:1.4em;">' + "{$_LANG.contact_email_invalid}" + '</font></li>';
+				error_for_ie8_and_below += '{$_LANG.contact_email_invalid}\n';
+			}
+		}
+		
+		if (name == ''){
+			error += '<li><font style="font-size:1.4em;">' + "{$_LANG.contact_name_empty}" + '</font></li>'; 
+			error_for_ie8_and_below += '{$_LANG.contact_name_empty}\n';
+		}
+		if (content == ''){ 
+			error += '<li><font style="font-size:1.4em;">' + "{$_LANG.contact_content_empty}" + '</font></li>'; 
+			error_for_ie8_and_below += '{$_LANG.contact_content_empty}\n';
+		}
+		
+		
+		if(document.all && !document.addEventListener){
+			if (error != ''){alert(error_for_ie8_and_below);return false;}
+		}
+		else{
+			if (error != ''){swal({   title: "",   text: error,   type: "error",   confirmButtonText: "{$_LANG.ok}", html: true });return false;}
+		}
+
+	    Ajax.call('mail.php?', "contact-subject=" + subject + "&contact-content=" + content + "&contact-email=" + email + "&contact-name=" + name, mailResponse, "GET", "JSON");
+
+	}
+  
+  
+	function mailResponse(result) {
+		var html = '';
+		var grid = '';
+		if (result.error == ''|| result.error == null) {
+			if(document.all && !document.addEventListener){
+				alert(result.message);
+			}
+			else{
+				swal({   title: "",   text: result.message,   type: "success",   confirmButtonText: "{$_LANG.ok}", html: true });
+			}
+			//document.getElementById("mail-resp").innerHTML = result.message;
+			//$("#mail-resp").center();
+			//document.getElementById("mail-resp").style.display = 'block';
+			//$("#mail-resp").fadeIn('slow');
+			//$("#mail-resp").delay(10000).fadeOut();
+			//$("#pin-container").append(html);
+			document.getElementById('contact-form').reset();
+
+		} else {
+			if(document.all && !document.addEventListener){
+				alert(result.message);
+			}
+			else{
+				swal({   title: "",   text: result.error,   type: "error",   confirmButtonText: "{$_LANG.ok}", html: true });
+			}
+		}
+			
+		//alert(result.error);
+		//document.getElementById('ajax-loading').innerHTML = '';
+		return true;
+	}
+	
+	
+  
+  
+  
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<!-- #BeginLibraryItem "/library/page_footer.lbi" -->
+<!-- #EndLibraryItem -->
+</body>
+</html>

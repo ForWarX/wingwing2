@@ -1,0 +1,22 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<ul class="user-menu-mobile">
+<li><a href="user.php?act=profile"{if $action eq 'profile'}class="curs"{/if}><i class="glyphicon glyphicon-user" style="{if $action eq 'profile'}background:#FA6C62;{/if}"></i></a></li>
+<li><a href="user.php?act=order_list"{if $action eq 'order_list'|| $action eq 'order_detail'}class="curs"{/if}><i class="glyphicon glyphicon-list-alt" style="{if $action eq 'order_list'}background:#FA6C62;{/if}"></i></a></li>
+<li><a href="user.php?act=address_list"{if $action eq 'address_list'}class="curs"{/if}><i class="glyphicon glyphicon-map-marker" style="{if $action eq 'address_list'}background:#FA6C62;{/if}"></i></a></li>
+<li><a href="user.php?act=account_deposit"{if $action eq 'account_deposit'}class="curs"{/if}><i class="glyphicon glyphicon-yen" style="{if $action eq 'account_deposit'}background:#FA6C62;{/if}"></i></a></li>
+<li><a href="user.php?act=collection_list"{if $action eq 'collection_list'}class="curs"{/if}><i class="glyphicon glyphicon-star" style="{if $action eq 'collection_list'}background:#FA6C62;{/if}"></i></a></li>
+<li><a href="user.php?act=message_list"{if $action eq 'message_list'}class="curs"{/if}><i class="glyphicon glyphicon-bullhorn" style="{if $action eq 'message_list'}background:#FA6C62;{/if}"></i></a></li>
+<li><a href="user.php?act=tag_list"{if $action eq 'tag_list'}class="curs"{/if}><i class="glyphicon glyphicon-tags" style="{if $action eq 'tag_list'}background:#FA6C62;{/if}"></i></a></li>
+<li><a href="user.php?act=booking_list"{if $action eq 'booking_list'}class="curs"{/if}><i class="glyphicon glyphicon-bookmark" style="{if $action eq 'booking_list'}background:#FA6C62;{/if}"></i></a></li>
+<!--<li><a href="user.php?act=bonus"{if $action eq 'bonus'}class="curs"{/if}><i class="glyphicon glyphicon-list-alt" style="{if $action eq 'bonus'}background:#FA6C62;{/if}"></i></a></li>-->
+<li><a href="user.php?act=comment_list"{if $action eq 'comment_list'}class="curs"{/if}><i class="glyphicon glyphicon-comment" style="{if $action eq 'comment_list'}background:#FA6C62;{/if}"></i></a></li>
+<!--<li><a href="user.php?act=group_buy">{$_LANG.label_group_buy}</a>-->
+<li><a href="user.php?act=track_packages"{if $action eq 'track_packages'}class="curs"{/if}><i class="glyphicon glyphicon-globe" style="{if $action eq 'track_packages'}background:#FA6C62;{/if}"></i></a></li>
+<!-- {if $cfg.use_integral} 购买此商品可使用P币-->
+<li><a href="user.php?act=pcoin_deposit"{if $action eq 'pcoin_deposit'}class="curs"{/if}><i class="glyphicon glyphicon-list-alt" style="{if $action eq 'pcoin_deposit'}background:#FA6C62;{/if}"></i></a></li>
+<!--{/if}-->
+<!--{if $show_transform_points}-->
+<li><a href="user.php?act=transform_points"{if $action eq 'transform_points'}class="curs"{/if}><i class="glyphicon glyphicon-list-alt" style="{if $action eq 'transform_points'}background:#FA6C62;{/if}"></i></a></li>
+<!--{/if}-->
+
+</ul>

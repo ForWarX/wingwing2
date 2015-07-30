@@ -1,0 +1,26 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div style="float:left">
+{if $user_info}
+
+<span>{$_LANG.dear} <span class="f7_b"><b>{$user_info.username}</b>    
+[ <a href="user.php">{$lang.user_center}</a> /  
+ <a href="." onclick="userLogout('{$_LANG.ok}');return false;">{$lang.user_logout}</a>  ] 
+
+{else}<a href="user.php"><font>{$_LANG.login}</font></i></a> | 
+ <a href="user.php?act=register">{$_LANG.signup}</a> |  <!--<a href="topic.php?topic_id=2">开通高级会员</a> |-->
+{/if}
+<script>
+function userLogout(button_name)
+{
+	Ajax.call('user.php?act=signout', 'button_name=' + button_name, logOutResponse, 'POST', 'JSON');
+}
+
+function logOutResponse(response){
+		msg = response.content;
+		button_name = response.button_name;
+		window.location.href = response.back_act;
+}
+</script>
+ 
+</div>

@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <!-- TemplateBeginEditable name="doctitle" -->
+    <title>{$page_title}</title>
+    <!-- TemplateEndEditable -->
+    <!-- TemplateBeginEditable name="head" -->
+    <!-- TemplateEndEditable -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" /> {* 包含脚本文件 *} {insert_scripts files='jquery.js,json2.js'} {insert_scripts files='common.js'}
+</head>
+
+<body>
+    <!-- #BeginLibraryItem "/library/page_header.lbi" -->
+
+    <!-- #EndLibraryItem -->
+
+
+
+
+
+    <script src="{$ecs_blocksit_js_path}"></script>
+
+
+    <div style="width:90%;margin:0 auto;min-height:600px;">
+        <div id="pin-container" class="clearfix" style="">
+            {foreach name=init_article from=$init_article item=item} {assign var=num_record value=$smarty.foreach.init_article.iteration}
+
+            <div class="grid">
+                <div class="grid-inner">
+                        <div><a href="article.php?id={$item.article_id}"><h4><!-- <i class="glyphicon glyphicon-bookmark" style="font-size: 0.65em;color: #19C589;"></i>&nbsp; --><small style="font-size:1.1em;">{$item.title}</small></h4></a></div>
+						<div style="height:5px;"></div>
+                        {if $item.src neq ''}
+					    <div class="imgholder">
+						<a href="article.php?id={$item.article_id}" ><img src="{$item.src}"></a>
+                        </div>
+						{/if}
+						<div style="height:10px;"></div>
+                        <div><font style="font-size:1.2em;color: #565656;"><small>{$item.content}</small></font></div>
+                        <div>{$item.article_date}</div>
+						<a href="article.php?id={$item.article_id}" class="label label-info" style="font-size: 1.1em;float:right;">{$_LANG.view}</a>
+                </div>
+            </div>
+
+            {/foreach}
+            <input type="hidden" value="{$num_record}" id="num_record_in_innerHTML">
+            <input type="hidden" value="0" id="done_in_innerHTML">
+        </div>
+    </div>
+    <div id="ajax-loading" style="  display: table;margin-bottom:4%;">
+    </div>
+
+
+    <input type="hidden" value="{$num_record}" id="num_record">
+    <input type="hidden" value="0" id="done">
+
+
+    <div style="width:100%;">
+        <div style="width:80%;margin:0 auto;text-align:center">
+            <button type="button" class="btn btn-default" id="more_button">{$_LANG.more}</button>
+        </div>
+    </div>
+    <div style="height:10px;">
+    </div>
+
+    <!-- #BeginLibraryItem "/library/page_footer.lbi" -->
+    <!-- #EndLibraryItem -->
+
+
+    <script>
+        $(document).ready(function() {
+
+
+            //blocksit define
+            $(window).load(function() {
+                setblocksit('pin-container', '', '', '', '');
+            });
+
+            //window resize
+            $(window).resize(function() {
+
+                setblocksit('pin-container', '', '', '', '');
+            });
+
+        });
+
+        $('#more_button').on('click', function(e) {
+            if (document.getElementById("done").value != 1) {
+
+                scrollGetMoreArticle();
+
+            }
+        });
+
+
+        function setblocksit(id, offsetXvalue, offsetYvalue, gridwidth, column) {
+
+            if (offsetXvalue == '') {
+                offsetXvalue = -8;
+            }
+            if (offsetYvalue == '') {
+                offsetYvalue = 7;
+            }
+            if (gridwidth == '') {
+                gridwidth = 300;
+            }
+
+            var winWidth = $(window).width();
+            if (winWidth < 660) {
+                conWidth = 300;
+                col = 1
+            } else if (winWidth < 880) {
+                conWidth = 660;
+                col = 3
+            } else if (winWidth < 1100) {
+                conWidth = 880;
+                col = 4;
+            } else {
+                conWidth = 1100;
+                col = 5;
+            }
+
+            $('#' + id).BlocksIt({
+                numOfCol: col,
+                offsetX: offsetXvalue,
+                offsetY: offsetYvalue,
+                blockElement: '.grid'
+            });
+        }
+
+        $('document').ready(function() {
+
+
+            if (document.getElementById("done").value != 1) {
+                if (sessionStorage.pincontainer) {
+                    document.getElementById("pin-container").innerHTML = sessionStorage.pincontainer;
+                    document.getElementById('done').value = document.getElementById('done_in_innerHTML').value;
+                    if (document.getElementById("done").value != 1) {
+                        document.getElementById('num_record').value = parseInt(document.getElementById('num_record_in_innerHTML').value) + 4;
+                        scrollalert();
+                    } else {
+                        document.getElementById("more_button").style.display = 'none';
+                    }
+                } else {
+                    scrollalert();
+                }
+            } else {
+                document.getElementById("more_button").style.display = 'none';
+            }
+
+        });
+
+        function scrollalert() {
+            if (document.getElementById("done").value != 1) {
+                var scrolltop = $(window).scrollTop()
+                var scrollheight = $(document).height()
+                var windowheight = $(window).height()
+                var scrolloffset = 20;
+                if (scrolltop >= (scrollheight - (windowheight + scrolloffset))) {
+                    scrollGetMoreArticle();
+                }
+                setTimeout('scrollalert();', 1400);
+            }
+        }
+
+
+
+
+        function scrollGetMoreArticle() {
+
+            document.getElementById('ajax-loading').innerHTML = '<img src="themes/wingon/images/ajax-loading.gif" />';
+
+            var num_record_start_from = document.getElementById("num_record").value;
+            Ajax.call('article.php?is_ajax=1&act=scrollGetMoreArticle', "num_record_start_from=" + num_record_start_from, scrollResponse, "GET", "JSON");
+
+        }
+
+
+
+        function scrollResponse(result) {
+            var html = '';
+            var grid = '';
+            if (result.error == '') {
+                for (var i = 0; i < result.content.length; i++) {
+				var imgtag = '';
+				if (result.content[i]['src'] != ''){
+					imgtag = '<div class="imgholder"><a href="article.php?id=' + result.content[i]['article_id'] + '" ><img src="' + result.content[i]['src'] + '"></a></div>';
+				}
+                    grid = '<div class="grid class" style="">' +
+                        '<div class="grid-inner">' +
+						'<div style="height:5px;"></div>' +
+                        '<div><a href="article.php?id=' + result.content[i]['article_id'] + '"><h4><small style="font-size:1.1em;">' + result.content[i]['title'] + '</small></h4></a></div>' +
+                        imgtag +
+						'<div style="height:10px;"></div>' + 
+                        '<div><font style="font-size:1.2em;color: #565656;"><small>' + result.content[i]['content'] + '</small></font></div>' +
+                        '<div>' + result.content[i]['article_date'] + '</div>' +
+                        '<a href="article.php?id=' + result.content[i]['article_id'] + '" class="label label-info" style="font-size: 1.1em;float:right;">' + '{$_LANG.view}' + '</a>' +
+                        '</div>' +
+                        '</div>';
+                    html = grid + html;
+                }
+                document.getElementById("num_record").value = result.num_record;
+                document.getElementById("pin-container").innerHTML = document.getElementById("pin-container").innerHTML + html;
+                sessionStorage.pincontainer = document.getElementById("pin-container").innerHTML;
+                document.getElementById('num_record_in_innerHTML').value = document.getElementById("num_record").value;
+
+            } else if (result.error == 1) {
+                document.getElementById("done").value = 1;
+                document.getElementById("more_button").style.display = 'none';
+            }
+            var winWidth = $(window).width();
+            setblocksit('pin-container', '', '', '', '');
+
+            document.getElementById('ajax-loading').innerHTML = '';
+            return true;
+        }
+    </script>
+
+
+
+
+
+</body>
+
+</html>

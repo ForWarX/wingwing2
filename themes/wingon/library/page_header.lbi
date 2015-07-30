@@ -1,0 +1,329 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+
+{insert_scripts files='transport_modified.js,region.js,classie.js,jquery.js'}
+<!--[if gte IE 9]><!-->
+    {insert_scripts files='sweetalert.min.js'}
+<!--<![endif]-->
+{insert_scripts files='jquery.auto-complete.js,json2.js'}
+<script src="{$ecs_bootstrap_bootstrap_min_js_path}"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script> 
+<link rel="stylesheet" href="{$ecs_bootstrap_css_path}">
+<link rel="stylesheet" href="{$ecs_sweetalertcss_path}">
+<link rel="stylesheet" href="themes/wingon/jquery.auto-complete.css">
+
+<script>
+  document.createElement('header');
+  document.createElement('section');
+  document.createElement('article');
+  document.createElement('aside');
+  document.createElement('nav');
+  document.createElement('footer');
+</script>
+  
+<script language="javascript">/*
+    $(document).ready(function(){
+    $('input.search-field').typeahead({
+        name: '',
+        remote:'searchAutoComplete.php?key=%QUERY',
+        limit : 10
+    });
+});*/
+$(document).ready(function(){
+	$(".nav-sec").hover(
+		function(){
+			$(".dropdown",this).css('left','-2px');
+			$(".dropdown",this).css('width','100%');
+			$(".dropdown",this).css('z-index','99999999');
+			$(this).addClass('selected');
+ 		}, 
+		function(){
+			$(".dropdown",this).css('left','-9999px');
+			$(this).removeClass('selected');
+		}
+	);
+	
+	/*if (document.all && !document.querySelector) {
+		alert('为了提高用户体验，请升级您的浏览器吧');
+	}*/
+	
+	/*if (document.all && document.querySelector && !document.addEventListener) {
+		alert('为了提高用户体验，请升级您的浏览器吧');
+	}*/
+	
+	if (document.all && !window.atob) {
+		alert('为了提高用户体验，请升级您的浏览器至IE10以上吧');
+	}
+	
+	
+	
+	
+	
+	
+	$("#my_account_li").hover(
+	function () {
+     clearTimeout($.data(this, 'timer'));
+     $('ul', this).stop(true, true).slideDown(200);
+  }, function () {
+    $.data(this, 'timer', setTimeout($.proxy(function() {
+      $('ul', this).stop(true, true).slideUp(200);
+    }, this), 200));
+  }
+	);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	});
+</script>
+
+
+
+<script>
+	function scrollNav(e){
+			var screenW = jQuery('body').innerWidth();
+			var screenH = jQuery('body').height();
+			//if (screenH > 1200){
+			
+            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                shrinkOn = 250,
+                header = document.querySelector("header");
+				sitecontainer1 = document.getElementById("site-container-1");
+				blankdiv = document.getElementById("blank-div");
+            if (distanceY > shrinkOn) {
+				if (screenW > 760){
+					classie.add(sitecontainer1,"site-container-1-smaller");
+					classie.add(header,"smaller");
+					//classie.add(blankdiv,"blank-div-smaller");
+					//document.getElementById("site-container-1").style.display = "none";
+					//document.getElementById("site-container-1").style.height = "0px";
+					}
+			} else {
+				if (screenW > 760){
+					if (classie.has(header,"smaller")) {
+						classie.remove(sitecontainer1,"site-container-1-smaller");
+						classie.remove(header,"smaller");
+						//classie.remove(blankdiv,"blank-div-smaller");
+						//document.getElementById("site-container-1").style.display = "block";
+						//document.getElementById("site-container-1").style.height = "103px";
+					}
+                }
+            }
+        }
+	//}
+	
+    function init() {
+
+		if (window.addEventListener) {
+			window.addEventListener("scroll", scrollNav, false);
+		}
+		else {
+			window.attachEvent("onscroll", scrollNav);
+		}
+    }
+    window.onload = init;
+	
+</script>
+
+
+
+
+
+<header id="masthead-1" class="site-header-1 border-bottom-1 kra-header-layout-standard-1" role="banner">
+<hgroup>   
+  
+         
+<div class="topNav">
+<div id="topNavContent" align="center">
+	<!--<span class="f_l"><span>欢迎使用银联卡人民币付款，今日加币兑换人民币的汇率为 <span style="color:#f23622; font-weight:bold">{$exchange_rate}</span></span></span>-->
+	
+
+           <div class="f_r" style=" margin-top:0;_margin-top:7px;">
+              {insert_scripts files='utils.js'}
+			  			   <ul class="wrapper_ul">
+               <li><font id="ECS_MEMBERZONE">{* PBCC 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'} </font>
+
+                  <!--{if $navigator_list.top}-->
+                  <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->  
+                  <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a>
+                  <!-- {/foreach} --> <!-- {/if} -->
+				  </li>
+				<li id="my_account_li"><a class="a1" href="user.php" id="my_account_a" ><i class="glyphicon glyphicon-user"></i></a>
+				
+
+						  <ul class="my_account_ul" id="my_account_ul"> 
+							 <li><a href="user.php?act=order_list">{$_LANG.my_order_list}</a></li>
+							 <li><a href="user.php?act=collection_list">{$_LANG.my_wish_list}</a></li>
+							 <li><a href="user.php?act=profile">{$_LANG.my_profile}</a></li>
+							 <li><a href="user.php?act=address_list">{$_LANG.my_address}</a></li>
+							 <!-- {if $cfg.use_integral} 购买此商品可使用P币-->
+							 <!--<li><a href="user.php?act=pcoin_deposit"><img src="../images/pcoin.gif" width="12px">币充值</a></li>-->
+							 <!-- {/if} -->    
+						 </ul>    
+				</li>
+				<li>
+				{$language_a}
+				</li>
+				<li>&nbsp;
+				</li>
+				
+					</ul>
+          </div>
+		   
+          </div>
+</div>   
+
+<div id="site-container-1" class="site-container-1" style="overflow-y:hidden">
+
+
+
+
+<div style="width:60%;margin:0 auto;">
+
+    <div class="site-header-left-1">
+		<table border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+		<tr>
+		<!--<td>
+        <h1 class="site-title-1"><a href="index.php" rel="home">wingon</a></h1>    
+        <h2 class="site-description-1">{$web_site_description}</h2>
+		</td>-->
+		<td width="200" style="padding:10px;">
+		<a href="index.php" rel="home">
+		<img src="{$img_path}/images/wingon_logo.png"  style="width:100%;">
+		</a>
+		</td>
+		<td width="10">
+		</td>
+		<td>
+		    		 <!--   $language_a -->
+		</td>
+		</tr>
+		</table>
+    </div><!-- .site-branding -->
+    
+
+    <div class="clearboth"></div>
+
+</div>
+</div>
+
+<nav id="site-navigation-1" class="main-navigation-1" role="navigation">
+    
+   
+	
+	<div id="menu-outer">
+    <label for="show-menu" class="show-menu"><span id="hamburgermenu"></span></label>
+	<input type="checkbox" id="show-menu" name="show-menu" role="button">
+
+		<ul id="menu" aria-expanded="false" class=" nav-menu-1" >		
+        <!-- {foreach name=no from=$navigator_list.middle item=nav } -->
+		<li class="page_item {if $nav.active eq 1}cur{/if}">
+		<a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if}    >{$nav.name}<!-- {if $nav.name eq '促销活动' || $nav.name eq '特别专区' || $nav.name eq '会员中心'}--><i class="icomoon-arrow-down-15"></i><!--{/if}--></a>
+        </li>
+        <!-- {/foreach} -->
+		</ul>
+
+    <div class="site-header-right-1">
+        <!--
+            <form role="search" method="get" class="search-form" action="http://localhost/wordpress/">
+				<label>
+					<span class="screen-reader-text">{$_LANG.search}</span>
+					<input type="search" class="search-field" placeholder="{$_LANG.search}..." value="" name="s" title="{$_LANG.search}" autocomplete="off">
+				</label>
+				<input type="submit" class="search-submit" value="{$_LANG.search}">
+			</form>  
+          -->
+			<form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()">
+				<label id="header-search-label" style="position:relative;">
+					<span class="screen-reader-text">{$_LANG.search}</span>
+					<input name="keywords" type="text" name="q" id="keyword" class="search-field" placeholder="{$_LANG.search}..." autocomplete="off">
+					<div id="automenudiv" style="position: absoulute; top: 0;"></div>
+				</label>
+			</form>
+                
+    </div>
+    </div>
+	
+	<script>
+	/*
+	$('input[name="q"]').autoComplete({
+	    source: function(term, response){
+	        $.getJSON('search.php?is_ajax=1&act=searchAutoComplete', { q: term }, function(data){ response(data); });
+	    }
+	});
+	
+	/*
+	$('input[name="q"]').autoComplete({
+	    source: function(term, response){
+	        //$.getJSON('/some/ajax/url/', { q: term }, function(data){ response(data); });
+			Ajax.call('search.php?is_ajax=1&act=searchAutoComplete', "q=" + autoKeywords, completeResponse, "GET", "JSON");
+	    }
+	});
+	/*
+	function completeResponse(response) {
+		response(response);
+	}
+	
+	$.ui.autocomplete.prototype._renderItem = function( ul, item){
+	  var term = this.term.split(' ').join('|');
+	  var re = new RegExp("(" + term + ")", "gi") ;
+	  var t = item.label.replace(re,"<b>$1</b>");
+	  return $( "<li></li>" )
+	     .data( "item.autocomplete", item )
+	     .append( "<a>" + t + "</a>" )
+	     .appendTo( ul );
+	};
+	*/
+	
+    $(function() {  
+               $('#keyword').autocomplete({  
+                   source: "search.php?is_ajax=1&act=autoCompleteSearchAjax",  
+                   minLength: 1,
+				   appendTo: "#automenudiv",
+				   delay: 500
+               });  
+               });
+			   /*
+	function autoAjax() {
+		//Ajax.call('search.php?is_ajax=1&act=searchAutoComplete', "q=" + 'W', completeResponse, "GET", "JSON");
+		 Ajax.call('search.php?is_ajax=1&act=searchAutoComplete', "num_record_start_from=" + 'uuu', completeResponse, "GET", "JSON");
+	}
+	*/
+	
+	/*$('#searchresultdata').empty();
+	$('#searchresultdata').append(server_response);
+	$('span#category_title').html(search_input);*/
+	
+	
+	
+	/*
+	function completeResponse(response) {
+		return true;
+	}	
+	*/
+	</script>
+
+    
+</nav><!-- #site-navigation -->        
+
+</hgroup> 
+</header>
+<div id="blank-div" class="blank-div"></div>

@@ -1,0 +1,2 @@
+ALTER TABLE  `ecs_article_cat` ADD  `cat_name_en` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER  `cat_name`
+ALTER TABLE  `ecs_article_cat` ADD  `cat_desc_en` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER  `cat_desc`

@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,user.js,transport_modified.js'}
+</head>
+<body><!-- #BeginLibraryItem "/library/page_header.lbi" -->
+<!-- #EndLibraryItem --><div class="block block1"><!--#登录界面 start-->
+<!-- {if $action eq 'login'} -->
+<div class="usBox clearfix" style=" height: 700px;
+  background: url('themes/wingon/images/Sharon_&_Nikki_McCutcheon.jpg') 50% 50%;
+  background-size: cover;">
+  <div class="login-form" style="">
+   <form name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
+        <table width="100%" border="0" align="left" cellpadding="3" cellspacing="5">
+		<tr><td style="vertical-align:top;"><h1 style="margin-top:-5px;"><small style="color:#fff;">{$_LANG.user_login}</small></h1></td></tr>
+		  <tr height="10"><td></td></tr>		
+          <tr>
+            <td width="85%">
+			  <div class="input-group input-group">
+			  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-user" style="rgba(0,0,0, .7)"></i></span>
+			  <input name="username" id="username_login" type="text" class="form-control" placeholder="{$_LANG.member_name}" aria-describedby="sizing-addon2">
+			  </div>
+			</td>
+		  </tr>
+		  <tr height="10"><td></td></tr>
+          <tr>
+            <td>
+			  <div class="input-group input-group">
+			  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-lock" style="rgba(0,0,0, .7)"></i></span>
+			  <input name="password"  id="password_login" type="password" class="form-control" placeholder="{$_LANG.password}" aria-describedby="sizing-addon2">
+			  </div>
+            </td>
+          </tr>
+          <!-- 判断是否启用验证码{if $enabled_captcha} -->
+          <tr>
+            <td><input id="captcha_login" type="text" size="8" name="captcha" class="inputBg" title="{$lang.comment_captcha}"/>
+            <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> </td>
+          </tr>
+          <!--{/if}-->
+		  <tr height="30"><td></td></tr>
+          <tr>
+            <td align="left">
+            <input  id="act_login" type="hidden" name="act" value="act_login" />
+            <input id="back_act_login" type="hidden" name="back_act" value="{$back_act}" />
+            <!--<input type="submit" name="submit" value="" class="us_Submit" />-->
+			<button type="submit" class="btn btn-primary" style="  width: 100%;">{$_LANG.login}</button>
+            </td>
+          </tr>
+		 <tr height="20"><td></td></tr>
+			   <tr>
+			<td colspan="2" align="left"><a href="user.php?act=qpassword_name" class="f6" style="color:#C7C7C7;">{$_LANG.get_password_by_question}</a>
+		 </tr>
+		 <tr>
+			<td colspan="2" align="left"><a href="user.php?act=get_password" class="f6" style="color:#C7C7C7;">{$_LANG.get_password_by_mail}</a></td>
+		 </tr>
+		<tr height="30"><td></td></tr>  
+	  <tr><td style="text-align:right;"><a href="user.php?act=register" class="label label-warning" style="font-size:1.2em;">{$_LANG.reg_now}</a></td></tr>	  
+	  </table>
+    </form>
+    <div class="blank"></div>
+  </div>
+</div>
+<!--{/if}-->
+<!--#登录界面 end-->
+
+<!--*会员注册界面 start-->
+    <!--{if $action eq 'register'}-->
+    <!-- {if $shop_reg_closed eq 1} -->
+    <div class="usBox shadow" >
+      <div class="usBox_2 clearfix">
+        <div class="f1 f5" align="center">{$_LANG.shop_register_closed}</div>
+      </div>
+    </div>
+    <!-- {else} -->
+    {insert_scripts files='utils.js'}
+<div class="usBox shadow"  style=" height: 900px;
+  background: url('themes/wingon/images/Sharon_&_Nikki_McCutcheon.jpg') 50% 50%;
+  background-size: cover;">
+  <div class="register-form clearfix">
+    <form action="user.php" method="post" name="formUser" onsubmit="return register2();">
+      <table width="100%"  border="0" align="left" cellpadding="5" cellspacing="3">
+	  <tr><td style="vertical-align:top;"><h1 style="margin-top:-5px;"><small style="color:#fff;">{$_LANG.sign_up}</small></h1></td></tr>
+        <tr>		  
+		<td width="85%">
+		  <div class="input-group input-group">
+		  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-user" style="rgba(0,0,0, .7)"></i></span>
+		  <input name="username" type="text" class="form-control" onblur="is_registered(this.value);" placeholder="{$_LANG.member_name}" aria-describedby="sizing-addon2" required>
+		  </div>
+		</td>
+        </tr>
+        <tr>
+        <td><span class="input-group-addon" id="username_notice" style="background:none;border:0px;color:#fff;text-align: right;"></span>
+        </td>
+        </tr>
+		<tr height="10"><td></td></tr> 
+        <tr>		       
+			<td>
+			  <div class="input-group input-group">
+			  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-lock" style="rgba(0,0,0, .7)"></i></span>
+			  <input name="password" id="password1" type="password" class="form-control" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)" placeholder="{$_LANG.password}" aria-describedby="sizing-addon2" required>
+			  </div>
+			</td>
+        </tr>
+		<tr>
+        <td><span class="input-group-addon" id="password_notice" style="background:none;border:0px;color:#fff;text-align: right;"></span>
+        </td>
+        </tr>
+
+        <tr>
+          <td>
+            <table width="200" border="0" cellspacing="0" cellpadding="1">
+              <tr align="center">
+			    <td align="left" width="50%" style="color:#F0AD4E;">{$_LANG.label_password_intensity}</td>
+				<td width="2%"></td>
+                <td width="16%" id="pwd_lower" style="color:#CFCFCF;">{$_LANG.pwd_lower}</td>
+				<td width="2%"></td>
+                <td width="16%" id="pwd_middle" style="color:#CFCFCF;">{$_LANG.pwd_middle}</td>
+				<td width="2%"></td>
+                <td width="" id="pwd_high" style="color:#CFCFCF;">{$_LANG.pwd_high}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+		<tr height="10"><td></td></tr>
+        <tr>
+		  	<td>
+			  <div class="input-group input-group">
+			  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-repeat" style="rgba(0,0,0, .7)"></i></span>
+			  <input name="confirm_password" type="password" class="form-control" id="conform_password" onblur="check_conform_password(this.value);" placeholder="{$_LANG.confirm_password}" aria-describedby="sizing-addon2" required>
+			  </div>
+			</td>
+        </tr>
+
+		<tr>
+        <td><span class="input-group-addon" id="conform_password_notice" style="background:none;border:0px;color:#fff;text-align: right;"></span>
+        </td>
+        </tr>	
+		<tr height="10"><td></td></tr>
+        <!-- {foreach from=$extend_info_list item=field} -->
+		<tr height="5"><td></td></tr>
+		<!-- {if $field.id eq 6} --> 	
+        <tr>		  
+		<td width="85%">
+		  <div class="input-group input-group">
+		  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-envelope" style="rgba(0,0,0, .7)"></i></span>
+		  <input name="email" type="text" class="form-control" placeholder="{$_LANG.contact_form_email}" aria-describedby="sizing-addon2" required>
+		  </div>
+		</td>
+        </tr>
+		<tr height="30"><td></td></tr>			
+        <tr>		
+		 <td width="85%">
+		  <div class="input-group input-group">
+		  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-question-sign" style="rgba(0,0,0, .7)" title="{$_LANG.passwd_question}"></i></span>
+		  <select class="form-control" name='sel_question'>
+			<option value='0'>{$_LANG.sel_question}</option>
+			{html_options options=$passwd_questions}
+		  </select>
+		  </div>
+		</td>
+        </tr>
+		<tr height="5"><td></td></tr>
+        <tr>
+ 		<td width="85%">
+		  <div class="input-group input-group">
+		  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-pencil" style="rgba(0,0,0, .7)"></i></span>
+		  <input name="passwd_answer" type="text" class="form-control" placeholder="{$_LANG.password_answer}" aria-describedby="sizing-addon2" required>
+		  </div>
+		</td>
+        </tr>
+		<tr height="20"><td></td></tr>
+	<!-- {else} -->
+		<tr height="5"><td></td></tr>	
+        <tr>
+		<td width="85%">
+		  <div class="input-group input-group">
+		  <span class="input-group-addon" id="sizing-addon2">
+		  <!-- {if $field.id eq 5}-->
+		  <i class="glyphicon glyphicon-phone" style="rgba(0,0,0, .7)"></i>
+		  <!--{/if}-->
+		  </span>
+		  <input name="extend_field{$field.id}" type="text" class="form-control" placeholder="{$_LANG.phone}" aria-describedby="sizing-addon2"  required>
+		  </div>
+		</td>
+        </tr>
+		
+	<!-- {/if} -->
+	<!-- {/foreach} -->
+      <!-- 判断是否启用验证码{if $enabled_captcha} -->
+      <tr>
+      <td align="right">{$lang.comment_captcha}</td>
+      <td><input type="text" size="8" name="captcha" class="inputBg" />
+      <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /> </td>
+      </tr>
+      <!--{/if}-->
+		<tr height="10"><td></td></tr>
+        <tr>
+          <td><label style="color:#F2F2F2;">
+			<input type="checkbox" name="agreement" value="1" checked="checked"aria-label="...">
+            {$_LANG.agreement}</label></td>
+        </tr>
+        <tr>
+          <td align="left">
+          <input name="act" type="hidden" value="act_register" >
+          <input type="hidden" name="back_act" value="{$back_act}" />
+		  <button type="Submit" name="Submit" class="btn btn-warning" style="  width: 100%;">{$_LANG.reg_now}</button>
+          </td>
+        </tr>
+		
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+                 <tr>
+                    <td colspan="2" align="left"><a href="user.php?act=qpassword_name" class="f6" style="color:#C7C7C7;">{$_LANG.get_password_by_question}</a>
+				 </tr>
+				 <tr>
+                    <td colspan="2" align="left"><a href="user.php?act=get_password" class="f6" style="color:#C7C7C7;">{$_LANG.get_password_by_mail}</a></td>
+                 </tr>
+	  <tr height="30"><td></td></tr>  
+	  <tr><td style="text-align:right;"><a href="user.php" class="label label-primary" style="font-size:1.2em;">{$_LANG.login}</a></td></tr>	  
+      </table>
+    </form>
+  </div>
+</div>
+<!--{/if}-->
+<!--{/if}-->
+<!--#会员注册界面 end-->
+
+<!--*找回密码界面 -->
+    <!--{if $action eq 'get_password'} -->
+    {insert_scripts files='utils.js'}
+    <script type="text/javascript">
+    {foreach from=$lang.password_js item=item key=key}
+      var {$key} = "{$item}";
+    {/foreach}
+    </script>
+<div class="usBox"  style=" height: 900px;
+  background: url('themes/wingon/images/Sharon_&_Nikki_McCutcheon.jpg') 50% 50%;
+  background-size: cover;">
+  <div class="login-form clearfix">
+    <form action="user.php" method="post" name="getPassword" onsubmit="return submitPwdInfo();">
+        <br />
+        <table width="100%" border="0" align="center">
+          <tr>
+			<small style="font-size:1.1em;color:#fff;">{$_LANG.username_and_email}</small>
+          </tr>
+		  <tr height="10"><td></td></tr>
+          <tr>
+			<td style="width:100%;">
+				  <div class="input-group input-group">
+				  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-user" style="rgba(0,0,0, .7)"></i></span>
+				  <input name="user_name" type="text" class="form-control" placeholder="{$_LANG.username}" aria-describedby="sizing-addon2" required>
+				  </div>
+			</td>
+          </tr>
+		  <tr height="10"><td></td></tr>
+          <tr>
+			<td style="width:100%;">
+				  <div class="input-group input-group">
+				  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-envelope" style="rgba(0,0,0, .7)"></i></span>
+				  <input name="email" type="text" class="form-control" placeholder="{$_LANG.email}" aria-describedby="sizing-addon2" required>
+				  </div>
+			</td>
+          </tr>
+		  <tr height="10"><td></td></tr>
+          <tr>
+            <td style="text-align:right;">
+			  <input type="hidden" name="act" value="send_pwd_email" />
+			  <button type="Submit" name="Submit" class="btn btn-primary">{$_LANG.submit}</button>
+			  <button type="button" name="button" class="btn btn-default" onclick="history.back()">{$_LANG.back_page_up}</button>
+			</td>			
+          </tr>
+        </table>
+        <br />
+      </form>
+  </div>
+</div>
+<!--{/if}-->
+
+<!--*通过问题找回密码的确认找回账号界面 -->
+    <!--{if $action eq 'qpassword_name'} -->
+<div class="usBox"  style=" height: 900px;
+  background: url('themes/wingon/images/Sharon_&_Nikki_McCutcheon.jpg') 50% 50%;
+  background-size: cover;">
+  <div class="login-form clearfix">
+    <form id="user_name_get_question_username_form" action="user.php" method="post" onsubmit="get_question_username_ajax();return false;">
+        <br />
+        <table width="100%" border="0" align="center">
+          <tr>
+			  <td>
+				  <small style="font-size:1.1em;color:#fff;">{$_LANG.get_question_username}</small>
+			  </td>
+          </tr>
+		  <tr height="10"><td></td></tr>
+          <tr>
+			  <td style="width:100%;">
+				  <div class="input-group input-group">
+				  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-user" style="rgba(0,0,0, .7)"></i></span>
+				  <input name="user_name" id="user_name_get_question_username_ajax" type="text" class="form-control" placeholder="{$_LANG.member_name}" aria-describedby="sizing-addon2" required>
+				  </div>
+			  </td>
+          </tr>
+		  <tr height="10"><td></td></tr>
+          <tr>
+            <td style="text-align:right;">
+			  <input type="hidden" name="act" value="get_passwd_question" />
+			  <button type="Submit" name="Submit" class="btn btn-primary">{$_LANG.submit}</button>
+			  <button type="button" name="button" class="btn btn-default" onclick="history.back()">{$_LANG.back_page_up}</button>
+			</td>
+          </tr>
+        </table>
+        <br />
+     </form>
+  </div>
+</div>
+<!--{/if}-->
+
+<!--*根据输入账号显示密码问题界面 -->
+    <!--{if $action eq 'get_passwd_question'} -->
+<div class="usBox"  style=" height: 900px;
+  background: url('themes/wingon/images/Sharon_&_Nikki_McCutcheon.jpg') 50% 50%;
+  background-size: cover;">
+  <div class="login-form clearfix">
+    <form id="passwd_answer_form" action="user.php" method="post" onsubmit="check_answer_ajax();return false;">
+        <br />
+        <table width="100%" border="0" align="center">
+          <tr>
+            <td align="left"><small style="font-size:1.1em;color:#fff;">{$_LANG.input_answer}</small></td>
+			
+          </tr>
+		  <tr height="10"><td></td></tr>
+          <tr>
+            <td width="61%"><small style="font-size:1.3em;color:#fff;">{$passwd_question}</small></td>
+          </tr>
+		  <tr height="10"><td></td></tr>
+          <tr>
+            <td>
+			  <div class="input-group input-group">
+			  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-pencil" style="rgba(0,0,0, .7)"></i></span>
+			  <input name="passwd_answer" id="passwd_answer_get_question_username_ajax" type="text" class="form-control" placeholder="{$_LANG.passwd_answer}" aria-describedby="sizing-addon2" required>
+			  </div>
+			</td>
+          </tr>          <!-- 判断是否启用验证码{if $enabled_captcha} -->
+          <tr>
+            <td>{$_LANG.comment_captcha}<input type="text" size="8" name="captcha" class="inputBg" />
+            <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> </td>
+          </tr>
+          <!--{/if}-->
+		  <tr height="10"><td></td></tr>          
+          <tr>
+			<td style="text-align:right;">
+				  <input type="hidden" name="act" value="check_answer" />
+				  <input type="submit" name="" value="{$_LANG.submit}" class="btn btn-primary" style="border:none;" />
+				  <input name="button" type="button" onclick="history.back()" value="{$_LANG.back_page_up}" style="border:none;" class="btn btn-default" />
+			</td>
+          </tr>
+        </table>
+        <br />
+      </form>
+  </div>
+</div>
+<!--{/if}-->
+
+<!-- {if $action eq 'reset_password'} -->
+    <script type="text/javascript">
+    {foreach from=$lang.password_js item=item key=key}
+      var {$key} = "{$item}";
+    {/foreach}
+    </script>
+<div class="usBox"  style=" height: 900px;
+  background: url('themes/wingon/images/Sharon_&_Nikki_McCutcheon.jpg') 50% 50%;
+  background-size: cover;">
+  <div class="login-form clearfix">
+    <form action="user.php" method="post" id="submitPwd_form" name="getPassword2" onSubmit="return submitPwd()">
+      <br />
+      <table width="100%" border="0" align="center">
+        <tr>
+          <td>
+		  	  <div class="input-group input-group">
+			  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-lock" style="rgba(0,0,0, .7)"></i></span>
+			  <input name="new_password" id="new_password_get_question_username_ajax" type="password" class="form-control" placeholder="{$_LANG.new_password}" aria-describedby="sizing-addon2" required>
+			  </div>
+		  </td>	  
+        </tr>
+		<tr height="10"><td></td></tr>
+        <tr>
+          <td>
+		  	  <div class="input-group input-group">
+			  <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-repeat" style="rgba(0,0,0, .7)"></i></span>
+			  <input name="confirm_password" id="confirm_password_get_question_username_ajax" type="password" class="form-control" placeholder="{$_LANG.confirm_password}" aria-describedby="sizing-addon2" required>
+			  </div>		  
+		  </td>
+        </tr>
+		<tr height="10"><td></td></tr>
+        <tr>
+          <td align="right">
+            <input type="hidden" name="act" value="act_edit_password" />
+            <input type="hidden" name="uid" value="{$uid}" />
+            <input type="hidden" name="code" value="{$code}" />
+			<input type="submit" name="" value="{$_LANG.confirm_submit}" class="btn btn-primary" style="border:none;" />
+          </td>
+        </tr>
+      </table>
+      <br />
+    </form>
+  </div>
+</div>
+
+<!--{/if}-->
+<!--#找回密码界面 end-->
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" -->
+<!-- #EndLibraryItem --></body>
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+{foreach from=$lang.passport_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var username_exist = "{$lang.username_exist}";
+</script>
+</html>

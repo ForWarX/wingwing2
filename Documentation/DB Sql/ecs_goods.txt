@@ -1,0 +1,4 @@
+--英文商品名
+ALTER TABLE `ecs_goods` ADD `goods_name_en` VARCHAR(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `goods_name`;
+--英文商品描述
+ALTER TABLE `ecs_goods` ADD `goods_desc_en` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `goods_desc`;

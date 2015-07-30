@@ -1,0 +1,58 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+
+
+<nav class="navbar yamm navbar-default " role="navigation" style="margin-bottom: 0px">
+
+     <ul class="nav navbar-nav">
+			 <!--{foreach from=$categories item=cat}-->
+       <li class="dropdown yamm-fw" id="index_category_tree_nav">
+				
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown">{$cat.name|escape:html}</a>
+         <ul class="dropdown-menu">
+           <li>
+               <div class="yamm-content">
+                  <div class="row"> 
+                    <!-- Your Menu Goes Here -->
+										<!--{foreach from=$cat.cat_id item=subcat}-->
+                    <div class="col-sm-2" style="display: inline-block; width:200px \9;">
+					{if $subcat.src neq ''}
+                      <div class="thumbnail"><img alt="260x130" style="height:130px!important;width:260px!important;" src="{$subcat.src}">
+					{else}
+                      <div class="thumbnail"><img alt="260x130" style="height:130px!important;width:260px!important;" src="images/260.jpg">
+					{/if} 
+                        <div class="caption">
+                          <p style="text-align:center; font-size:auto;">
+														
+														<a href="{$subcat.url}">{$subcat.name|escape:html}<span></span></a>
+														
+													</p>
+                          <!--<p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn btn-default">Action</a></p>-->
+                        </div>
+                      </div>
+                    </div>
+										<!--{/foreach}-->
+										<!-- Menu End-->
+                  </div>
+               </div>
+           </li>
+         </ul>
+				 
+       </li>
+			 <!--{/foreach}--> 
+     </ul>
+	 <script>
+  // ADD SLIDEDOWN ANIMATION TO DROPDOWN //
+  $('.dropdown').on('show.bs.dropdown', function(e){
+	$(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+  });
+
+  // ADD SLIDEUP ANIMATION TO DROPDOWN //
+  $('.dropdown').on('hide.bs.dropdown', function(e){
+	$(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+  });
+	 </script>
+</nav>
+
