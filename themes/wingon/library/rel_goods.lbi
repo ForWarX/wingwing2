@@ -13,8 +13,8 @@
                 <!--{/foreach}-->
             </ul>
             </div>
-            <span class="switch jcarousel-control-prev"><i class="icomoon-arrow-left-16"></i></span>
-        <span class="switch jcarousel-control-next"><i class="icomoon-arrow-right-17 "></i></span>
+            <span class="switch jcarousel-control-prev"><i class="fa fa-angle-left"></i></span>
+        	<span class="switch jcarousel-control-next"><i class="fa fa-angle-right"></i></span>
             </div>
         </div>
     </div>
@@ -23,4 +23,74 @@
     <div class="blank"></div>
     <div class="blank"></div>
     <div class="blank"></div>
+	
+	<script>
+	(function($) {
+	    $(function() {
+	        /*
+	        Carousel initialization
+	        */
+	        $('.jcarousel')
+	            .jcarousel({
+	                // Options go here
+					wrap: 'circular'
+	            });
+
+				var w = $(window).width();
+				var next, prev;
+				
+				if (w < 760) {
+					prev = '-=1';
+					next = '+=1';
+				} else {
+					prev = '-=6';
+					next = '+=6';
+				}
+	        /*
+	         Prev control initialization
+	         */
+	        $('.jcarousel-control-prev')
+	            .on('jcarouselcontrol:active', function() {
+	                $(this).removeClass('inactive');
+	            })
+	            .on('jcarouselcontrol:inactive', function() {
+	                $(this).addClass('inactive');
+	            })
+	            .jcarouselControl({
+	                // Options go here
+	                target: prev
+	            });
+
+	        /*
+	         Next control initialization
+	         */
+	        $('.jcarousel-control-next')
+	            .on('jcarouselcontrol:active', function() {
+	                $(this).removeClass('inactive');
+	            })
+	            .on('jcarouselcontrol:inactive', function() {
+	                $(this).addClass('inactive');
+	            })
+	            .jcarouselControl({
+	                // Options go here
+	                target: next
+	            });
+
+	        /*
+	         Pagination initialization
+	         */
+	        $('.jcarousel-pagination')
+	            .on('jcarouselpagination:active', 'a', function() {
+	                $(this).addClass('active');
+	            })
+	            .on('jcarouselpagination:inactive', 'a', function() {
+	                $(this).removeClass('active');
+	            })
+	            .jcarouselPagination({
+	                // Options go here
+	            });
+	    });
+	})(jQuery);
+	
+	</script>
 <!--{/if}-->

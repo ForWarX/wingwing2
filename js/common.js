@@ -44,6 +44,12 @@ function addToCart1(goodsId, parentId, xpbuy)
 
 function getmousepos(e){
   var pos = mousePos(e);
+  var w = $(window).width();
+ 
+ if (pos.x <= 150)
+	 pos.x += 300;
+ else if (pos.x+150 > w)
+	 pos.x -= 150;
  document.minileft = pos.x;
  document.minitop = pos.y;
 }

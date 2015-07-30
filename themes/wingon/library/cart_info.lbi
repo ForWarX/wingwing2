@@ -11,7 +11,7 @@
                 </a>
             </span>
 			<p class="left sgoodc">
-            	<a class="name" href="{$goods.url}">{$goods.short_name}</a>
+            	<a class="name" href="{$goods.url}">{$goods.short_name}</a>xxx
 				<span>{$goods.goods_jj}</span>
 			</p>
 			<p class="right sgoodt">

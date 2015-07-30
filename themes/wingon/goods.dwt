@@ -25,11 +25,14 @@ function $id(element) {
 	.footer{
 		margin-top: 0 !important;
 	}
+	.block.box {
+		width: 1000px;
+	}
 </style>
 </head>
 <body><!-- #BeginLibraryItem "/library/page_header.lbi" -->
 
-<!-- #EndLibraryItem -->{insert_scripts files='jquery.countdown.min.js'}
+<!-- #EndLibraryItem -->{insert_scripts files='jquery.countdown.min.js,jquery.jcarousel.min.js'}
 
 	<!-- #BeginLibraryItem "/library/cart_notice.lbi" --><div id="shopbox" class="shopbox">
     <div class="shopboxcon">
@@ -180,7 +183,7 @@ function $id(element) {
             <div class="f_l"><a href="javascript:addToCart1({$goods.goods_id})" class="add_to_cart hvr-bounce-to-right3" onclick="getmousepos(event)"><i class="fa fa-cart-plus"></i>&nbsp;{$_LANG.add_to_cart}</a>
             </div>
         </div>
-        <dl class="pt20" style="width:40%">
+        <dl class="pt20" style="">
             <dt>分享</dt>
             <dd>
             	<div class="bdsharebuttonbox" ><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a></div>

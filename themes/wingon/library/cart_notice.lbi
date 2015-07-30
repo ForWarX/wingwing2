@@ -2,7 +2,7 @@
     <div class="shopboxcon">
         <div id="shoploading" style="display: block;"><img alt="loading" src="../images/loading.gif"></div>
         <div>
-          <h2><a class="track close" name="item-close-cart" href="#"  onclick="document.getElementById('shopbox').style.display='none';"><img src="../images/close_red.png"><span onclick="document.getElementById('shopbox').style.display='none';">关闭</span></a></h2>
+          <h2><a class="track close" name="item-close-cart" href="#"  onclick="document.getElementById('shopbox').style.display='none';"><img src="../images/close_red.png"><span onclick="document.getElementById('shopbox').style.display='none'; return false;">关闭</span></a></h2>
           <div class="spboxcontent">
               <div class="shopboxdetail">
                 <div class="spboxleft"><img src="../images/cart_red.png"></div>

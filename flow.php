@@ -156,7 +156,7 @@ if ($_REQUEST['step'] == 'add_to_cart')
 
     $result = array('error' => 0, 'message' => '', 'content' => '', 'goods_id' => '', 'num' => '0', 'price' => '0');
     $json  = new JSON;
-
+	
     if (empty($_POST['goods']))
     {
         $result['error'] = 1;
@@ -270,7 +270,7 @@ $sql = 'SELECT * ' .
    }
 
  }
-
+ 
     $result['confirm_type'] = !empty($_CFG['cart_confirm']) ? $_CFG['cart_confirm'] : 2;
     die($json->encode($result));
 	}

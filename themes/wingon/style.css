@@ -1506,9 +1506,9 @@ color:#19C589;margin:0 0 0.6em; font-weight:800;}
    /*.textInfo form>dl dt{float:left;text-align:left;width:40px;margin-top:6px;font-size: 1.2em;}*/
    .textInfo form>dl dd{font-size:1.2em;height:35px;line-height:31px;}
    
-   .input_quantity{vertical-align: middle;border: 1px solid #361F5B;font-size: 1.5em;height: 26px;line-height: 26px;margin: 0;padding: 3px 2px 0 3px;width: 25px;text-align:center;background:#e5e5e5;color:#666;}
+   .input_quantity{vertical-align: middle;border: 1px solid #361F5B;font-size: 1.5em;height: 30px;line-height: 26px;margin: 0;padding: 3px 2px 0 3px;width: 40px;text-align:center;background:#e5e5e5;color:#666;}
    .quantity_adjust{display: inline-block;vertical-align: middle;}
-   .quantity_adjust span{border: 1px solid #361F5B;cursor: pointer;display: block;height: 12px;line-height: 12px;overflow: hidden;width: 16px;background:#e5e5e5;-moz-transition: all 0.5s ease;-webkit-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
+   .quantity_adjust span{border: 1px solid #361F5B;cursor: pointer;display: block;height: 13px;line-height: 12px;overflow: hidden;width: 16px;background:#e5e5e5;-moz-transition: all 0.5s ease;-webkit-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
    .quantity_adjust span:hover{background:#361F5B;}
    .quantity_adjust span:hover .arrow-up{ border-bottom:5px solid #e5e5e5;}
    .quantity_adjust span:hover .arrow-down{ border-top:5px solid #e5e5e5;}
@@ -2177,7 +2177,7 @@ box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
    
 /* 迷你购物车 */
 
-	  .shopbox { display: none; position: absolute; width: 442px; overflow: hidden; padding-bottom: 30px;  background: rgba(255, 255, 255, 0.62); font-size: 12px; z-index: 9999; border: 1px solid #D6D6D6;
+	  .shopbox { display: none; position: absolute; width: 442px; overflow: hidden; padding-bottom: 30px;  background: rgba(255, 255, 255, 0.62); font-size: 12px; z-index: 1; border: 1px solid #D6D6D6;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);}
   .shopbox a { font-size: 12px; text-decoration: none; }
   .shopbox h2 { height: 25px; margin: 0; padding: 0; }
@@ -3844,20 +3844,22 @@ color: #c0c0c0;
 	
 }
 /*商品页-相关商品*/
-.rel_goods .sign{width:11%;height:40px;font-size:1.2em;background-color:#361F5B;color:#fff;float:left;font-size:1.2em;line-height:40px;text-align:center;margin-right:89%;position:relative;}
+.rel_goods .sign{width:110px;height:40px;font-size:1.2em;background-color:#926741;color:#fff;float:left;font-size:1.2em;line-height:40px;text-align:center;margin-right:89%;position:relative;}
 .rel_goods .right_tri{width: 0;
 height: 0;
 border-style: solid;
 border-width: 0 30px 30px 0;
-border-color: transparent #5c4192 transparent transparent;position:absolute;top:0;right:0;}
-.rel_goods .wrap{width:99.6%;float:left;border:2px solid #361F5B;min-height:176px;}
+border-color: transparent #5B3F1F transparent transparent;position:absolute;top:0;right:0;}
+.rel_goods .wrap{width:100%;float:left;border:2px solid #926741;min-height:176px;}
 .rel_goods .wrap .jcarousel_wrapper{width:95.2%;}
 .rel_goods .wrap .jcarousel{overflow:hidden;position:relative;}
 .rel_goods .wrap .switchable_content {list-style: none;margin: 0;padding: 0;width:20000em;position:relative;}
-.rel_goods .wrap .switch{background-color: #e5e5e5;color: #5d5d5d;font-size: 2em;cursor:pointer;position:absolute;width:23px;z-index:9999;padding: 76px 0;top:42px;-moz-transition: all 0.5s ease;-webkit-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
+.rel_goods .wrap .switch{background-color: #e5e5e5;color: #5d5d5d;font-size: 2em;cursor:pointer;position:absolute;width:23px;z-index:1;padding: 88px 0;top:42px;-moz-transition: all 0.5s ease;-webkit-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
 .jcarousel-control-prev{left:2px;}
 .jcarousel-control-next{right:2px;}
-.rel_goods .wrap .switch:hover{background:#361F5B;}
+.jcarousel-control-prev i{padding-left:5px;}
+.jcarousel-control-next i{padding-left:7px;}
+.rel_goods .wrap .switch:hover{background:#5B3F1F;}
 .rel_goods .wrap .switch:hover i{color:#e5e5e5;}
 .rel_goods .wrap .switchable_panel{float:left;}
 .rel_goods .wrap .switchable_panel .gname{text-align:center;}
@@ -3928,7 +3930,7 @@ border-color: transparent #5c4192 transparent transparent;position:absolute;top:
 
 .nav-tabs {
   border: 2px solid #361F5B;
-  border-left:0 none;
+  /*border-left:0 none;*/
   background-color:#e5e5e5;
   
 }
