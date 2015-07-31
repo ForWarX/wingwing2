@@ -1347,9 +1347,9 @@ background: url(images/new_main_line.gif) no-repeat right center;} */
    _padding:12px 0px 0px 0px;}
    .centerPadd .goodsBox .more{text-align:right; clear:both; margin:0 8px 8px 0;}
        /*单个商品*/
-       .goodsItem{width:174px; float:left; position:relative; overflow:hidden; text-align:left; border-style:solid; border-width:2px; margin-bottom:10px; border-bottom:none; padding-bottom:3px; border-radius:5px; overflow:hidden; border-color: transparent; transition: border-color 0.5s ease;}
+       .goodsItem{width:186px; float:left; position:relative; overflow:hidden; text-align:left; border-style:solid; border-width:2px; margin-bottom:10px; border-radius:5px; overflow:hidden; border-color: transparent; transition: border-color 0.5s ease; background-color: rgba(0, 128, 0, 0.05); padding:5px 5px 8px 5px;;}
 	   .goodsItem:hover {
-	   	border-color: #007299;
+	   	border-color: #009C48;
 	   }
 	   .goodsItem2{position:relative; overflow:hidden; padding:10px 6px 15px 6px;}
 	   .goodsItem3{width: 210px;height: 108px;float: left;display: inline;padding: 10px 12px;}
@@ -3529,7 +3529,7 @@ color: #c0c0c0;
 }
 
 .btn-default.raised {
-    box-shadow: 0 3px 0 0 #007299;
+    box-shadow: 0 3px 0 0 #009C48;
 	width: 50%;
 }
 

@@ -57,11 +57,11 @@ $_LANG['later_bought_amounts'] = 'bought amounts latest';
 $_LANG['bought_time'] = 'bought time';
 $_LANG['turnover'] = 'turnover';
 $_LANG['no_notes'] = 'No one bought this product';
-$_LANG['shop_price'] = 'Shop price:';
-$_LANG['market_price'] = 'Market price:';
+//$_LANG['shop_price'] = 'Shop price:';
+//$_LANG['market_price'] = 'Market price:';
 $_LANG['goods_brief'] = 'Goods Brief:';
 $_LANG['goods_album'] = 'Merchandise photo album';
-$_LANG['promote_price'] = 'Promotion price:';
+//$_LANG['promote_price'] = 'Promotion price:';
 $_LANG['fittings_price'] = 'Accessories price:';
 $_LANG['collect'] = 'Collect';
 $_LANG['add_to_cart'] = '| Add to cart |';
@@ -191,6 +191,7 @@ $_LANG['addto_cart_success_2'] = 'Add to the cart successfully, would you shoppi
 $_LANG['no_keywords'] = "Please enter keywords!";
 
 /* 分页排序 */
+/*
 $_LANG['exchange_sort']['goods_id'] = 'Sort by time';
 $_LANG['exchange_sort']['exchange_integral'] = 'Sort by integral';
 $_LANG['exchange_sort']['last_update'] = 'Sort by update';
@@ -208,6 +209,7 @@ $_LANG['page_prev'] = 'Prev';
 $_LANG['page_next'] = 'Next';
 $_LANG['page_last'] = 'Last';
 $_LANG['btn_display'] = 'Display';
+*/
 
 /* 投票 */
 $_LANG['vote_times'] = 'Vote times';

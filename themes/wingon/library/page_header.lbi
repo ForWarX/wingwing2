@@ -34,6 +34,8 @@ var process_request = "{$lang.process_request}";
     });
 });*/
 $(document).ready(function(){
+	init();
+	
 	$(".nav-sec").hover(
 		function(){
 			$(".dropdown",this).css('left','-2px');
@@ -102,7 +104,6 @@ $(document).ready(function(){
 			var screenW = jQuery('body').innerWidth();
 			var screenH = jQuery('body').height();
 			//if (screenH > 1200){
-			
             var distanceY = window.pageYOffset || document.documentElement.scrollTop,
                 shrinkOn = 250,
                 header = document.querySelector("header");
@@ -131,7 +132,6 @@ $(document).ready(function(){
 	//}
 	
     function init() {
-
 		if (window.addEventListener) {
 			window.addEventListener("scroll", scrollNav, false);
 		}
@@ -139,7 +139,9 @@ $(document).ready(function(){
 			window.attachEvent("onscroll", scrollNav);
 		}
     }
-    window.onload = init;
+    
+	
+	
 	
 </script>
 

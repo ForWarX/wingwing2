@@ -14,12 +14,13 @@
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
 <link href="portfolio.css" rel="stylesheet" type="text/css" />
+<link href="prettyPhoto.css" rel="stylesheet" type="text/css" />
 <link href="icomoon.css" rel="stylesheet" type="text/css" />
 
 <link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
 {* 包含脚本文件 *}
-{insert_scripts files='common.js,index.js,jquery.js,jquery.lazyload.js,jssor.js,jssor.slider.js,vertical_nav.js,onload.js,isotope.js,isotope-custom.js,jquery.prettyPhoto.js'}
-{insert_scripts files='jquery.countdown.min.js'}
+{insert_scripts files='common.js,index.js,jquery.js,jquery.lazyload.js,jssor.js,jssor.slider.js,vertical_nav.js,onload.js,isotope.js,isotope-custom.js'}
+{insert_scripts files='jquery.countdown.min.js,jquery.prettyPhoto.js'}
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" -->
@@ -352,7 +353,6 @@
 		  
 		    
 		</div>
-		<script src="js/jquery.prettyPhoto.js" ></script>
 	</section>
 		<script>
 		  

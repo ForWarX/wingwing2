@@ -59,7 +59,7 @@ $_LANG['ori_price'] = '原价';
 /*商品描述改为商品净重*/
 $_LANG['goods_brief'] = '商品净重：';
 $_LANG['goods_album'] = '商品相册';
-$_LANG['promote_price'] = "促销价";
+//$_LANG['promote_price'] = "促销价";
 $_LANG['fittings_price'] = '配件价格：';
 $_LANG['collect'] = '加入收藏夹';
 $_LANG['add_to_cart'] = '加入购物车';
@@ -79,8 +79,8 @@ $_LANG['goods_name'] = '商品名称';
 $_LANG['goods_attr'] = '商品属性';
 $_LANG['goods_price_ladder'] = '价格阶梯';
 $_LANG['ladder_price'] = 'B2B价格';
-$_LANG['shop_prices'] = '本店价';
-$_LANG['market_prices'] = '市场价';
+//$_LANG['shop_prices'] = '本店价';
+//$_LANG['market_prices'] = '市场价';
 $_LANG['deposit'] = '团购保证金';
 $_LANG['amount'] = '商品总价';
 $_LANG['number'] = '购买数量';
@@ -94,7 +94,7 @@ $_LANG['is_cancel'] = '取消';
 $_LANG['amend_amount'] = '修改数量';
 $_LANG['end'] = '结束';
 $_LANG['require_field'] = '(必填)';
-$_LANG['search_result'] = '搜索结果';
+//$_LANG['search_result'] = '搜索结果';
 $_LANG['order_number'] = '订单号';
 $_LANG['consignment'] = '发货单';
 $_LANG['activities'] = '商品正在进行的活动';
@@ -190,6 +190,7 @@ $_LANG['addto_cart_success_2'] = "该商品已添加到购物车，您现在还�
 $_LANG['no_keywords'] = "请输入搜索关键词！";
 
 /* 分页排序 */
+/*
 $_LANG['exchange_sort']['goods_id'] = '按上架时间排序';
 $_LANG['exchange_sort']['exchange_integral'] = '按积分排序';
 $_LANG['exchange_sort']['last_update'] = '按更新时间排序';
@@ -207,6 +208,7 @@ $_LANG['page_prev'] = '上一页';
 $_LANG['page_next'] = '下一页';
 $_LANG['page_last'] = '最末页';
 $_LANG['btn_display'] = '显示方式';
+*/
 
 /* 投票 */
 $_LANG['vote_times'] = '参与人次';

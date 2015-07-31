@@ -913,4 +913,47 @@ $_LANG['day'] = ' Day(s) ';
 $_LANG['hour'] = ' Hour(s) ';
 $_LANG['minute'] = ' Min ';
 $_LANG['second'] = ' Sec ';
+
+//search 頁面
+$_LANG['search_result'] = 'Search Result';
+$_LANG['btn_display'] = 'Sort By';
+$_LANG['buy'] = 'Buy';
+$_LANG['favourite'] = 'Watch';
+
+/* 分页排序 */
+$_LANG['exchange_sort']['goods_id'] = 'Sort by time';
+$_LANG['exchange_sort']['exchange_integral'] = 'Sort by integral';
+$_LANG['exchange_sort']['last_update'] = 'Sort by update';
+$_LANG['sort']['goods_id'] = 'Sort by time';
+$_LANG['sort']['shop_price'] = 'Sort by price';
+$_LANG['sort']['last_update'] = 'Sort by update';
+$_LANG['order']['DESC'] = 'Descending';
+$_LANG['order']['ASC'] = 'Ascending';
+$_LANG['pager_1'] = 'Total ';
+$_LANG['pager_2'] = ' records';
+$_LANG['pager_3'] = ', divided into';
+$_LANG['pager_4'] = ' pages.';
+$_LANG['page_first'] = 'First';
+$_LANG['page_prev'] = 'Prev';
+$_LANG['page_next'] = 'Next';
+$_LANG['page_last'] = 'Last';
+
+$_LANG['promote_price'] = 'Promotion price:';
+$_LANG['shop_price'] = 'Price:';
+$_LANG['market_price'] = 'Market price:';
+
+$_LANG['shopping_cart'] = 'Shopping Cart';
+$_LANG['delete'] = 'Delete';
+$_LANG['unit'] = 'items';
+$_LANG['total_price'] = 'Subtotal:';
+$_LANG['yuan'] = '';
+$_LANG['dollar'] = '$';
+$_LANG['checkout'] = 'Check Out>>';
+
+//cart_notice.lbi 加入購物車的提示
+$_LANG['itemAdded'] = 'This item has sucessfully added to shopping cart';
+$_LANG['shopping_cart'] = 'Quantity: ';
+$_LANG['item_quantity'] = 'items';
+$_LANG['subtotal'] = 'Subtotal: ';
+$_LANG['continue_shopping'] = 'Continue Shopping';
 ?>

@@ -917,4 +917,50 @@ $_LANG['day'] = '天';
 $_LANG['hour'] = '小时';
 $_LANG['minute'] = '分';
 $_LANG['second'] = '秒';
+
+//search 頁面
+$_LANG['search_result'] = '搜索结果';
+$_LANG['btn_display'] = '显示方式';
+$_LANG['buy'] = '购买';
+$_LANG['favourite'] = '收藏';
+
+/* 分页排序 */
+$_LANG['exchange_sort']['goods_id'] = '按上架时间排序';
+$_LANG['exchange_sort']['exchange_integral'] = '按积分排序';
+$_LANG['exchange_sort']['last_update'] = '按更新时间排序';
+$_LANG['sort']['goods_id'] = '按上架时间排序';
+$_LANG['sort']['shop_price'] = '按价格排序';
+$_LANG['sort']['last_update'] = '按更新时间排序';
+$_LANG['order']['DESC'] = '倒序';
+$_LANG['order']['ASC'] = '正序';
+$_LANG['pager_1'] = '总计 ';
+$_LANG['pager_2'] = ' 个记录';
+$_LANG['pager_3'] = '，共 ';
+$_LANG['pager_4'] = ' 页。';
+$_LANG['page_first'] = '第一页';
+$_LANG['page_prev'] = '上一页';
+$_LANG['page_next'] = '下一页';
+$_LANG['page_last'] = '最末页';
+
+$_LANG['promote_price'] = "促销价";
+$_LANG['shop_prices'] = '本店价';
+$_LANG['market_prices'] = '市场价';
+
+$_LANG['shopping_cart'] = '购物车';
+$_LANG['delete'] = '删除';
+$_LANG['unit'] = '件';
+$_LANG['total_price'] = '合计:';
+$_LANG['yuan'] = '元';
+$_LANG['dollar'] = '';
+$_LANG['checkout'] = '去结算>>';
+
+
+//cart_notice.lbi 加入購物車的提示
+$_LANG['itemAdded'] = '该商品已成功放入购物车';
+$_LANG['shopping_cart'] = '购物车共';
+$_LANG['item_quantity'] = '件商品';
+$_LANG['subtotal'] = '合计：';
+$_LANG['continue_shopping'] = '继续购物';
+
+
 ?>
