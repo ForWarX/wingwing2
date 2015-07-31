@@ -33,38 +33,10 @@ function $id(element) {
 
 <!-- #EndLibraryItem -->{insert_scripts files='jquery.countdown.min.js,jquery.jcarousel.min.js'}
 
-	<!-- #BeginLibraryItem "/library/cart_notice.lbi" --><div id="shopbox" class="shopbox">
-    <div class="shopboxcon">
-        <div id="shoploading" style="display: block;"><img alt="loading" src="images/loading.gif"></div>
-        <div>
-          <h2><a class="track close" name="item-close-cart" href="#"  onclick="document.getElementById('shopbox').style.display='none';"><img src="images/close_red.png"><span onclick="document.getElementById('shopbox').style.display='none';">关闭</span></a></h2>
-          <div class="spboxcontent">
-              <div class="shopboxdetail">
-                <div class="spboxleft"><img src="images/cart_red.png"></div>
-                <div class="spboxright">
-                  <span class="spboxtitle">该商品已成功放入购物车</span> <span class="blank5"></span>
-                  <p class="num">购物车共 <span id="shopboxcount" class="numstyle"></span> 件商品 合计：<span id="shopboxprice" class="numstyle2"></span> 元</p>
-                  <span class="blank5"></span>
-                  <p class="spbbtndiv">
-                    <a href="javascript:void(0)" name="item-continueshop" class="jxgwbtn track" onclick=" document.getElementById('shopbox').style.display='none';">&lt;&lt;继续购物</a>
-                    <a target="_parent" href="library/flow.php" name="item-Settlement" class="track"><img src="images/checkout_red.png" class="qujiesuan"></a>
-                  </p>
-                </div>
-              </div>
-             
-          </div>
-        </div>
-    </div>
-</div>    <!-- #EndLibraryItem -->
+	<!-- #BeginLibraryItem "/library/cart_notice.lbi" --> <!-- #EndLibraryItem -->
 <!-- #BeginLibraryItem "/library/index_category_tree.lbi" --><!-- #EndLibraryItem -->
 <div class="block" id="goods_page_banner"></div>
-<!-- #BeginLibraryItem "/library/ur_here.lbi" -->
-<div class="block box">
-<div class="blank"></div>
- <div id="ur_here">
-{$lang.ur_here} {$ur_here} 
-</div>
-</div><!-- #EndLibraryItem -->
+
 
 <div class="block2 clearfix">
   
@@ -101,11 +73,11 @@ function $id(element) {
      <div class="textInfo">
      <form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
 		 <div class="clearfix title">
-      		<!--{if $goods.is_shipping eq 1}--><span style="color:#fff;background:#f23622;padding:0 5px;margin:0 5px 0 0;">包邮</span><!--{/if}-->{$goods.goods_name}
+      		<!--{if $goods.is_shipping eq 1}--><span style="color:#fff;background:#f23622;padding:0 5px;margin:0 5px 0 0;">{$_LANG.free_shipping}</span><!--{/if}-->{$goods.goods_name}
       	 </div>
       	<div class="price_panel" {if $is_promoted neq 1}style="height:70px !important;"{/if}>
         	<div class="f_l" id="f_l_goods">
-                <dl class="pt20"><dt style="line-height:36px;"><!--{if $is_promoted eq 1}-->{$lang.cur_price}<!--{else}-->售价<!--{/if}--></dt>
+                <dl class="pt20"><dt style="line-height:36px;"><!--{if $is_promoted eq 1}-->{$lang.cur_price}<!--{else}-->{$_LANG.cur_price}<!--{/if}--></dt>
                     <dd style="padding: 4px 0;">
                         <div style="line-height:24px;"><em class="cur_price" style="
             font-size: 1.5em;">{$currency_format}</em><span id="ECS_GOODS_AMOUNT" class="cur_price"  style="font-size: 2.5em;font-weight: bolder;">{$goods.shop_price}</span><span class="rmb">（约合￥<span id="price_in_cny">{$shop_price_rmb}</span>）</span>
@@ -119,8 +91,8 @@ function $id(element) {
                 </dl>
                 <!--{/if}-->
 				<!--{if $volume_price_list|@count gt 0}}-->
-				<div id="goods_countdown_timer" style="font-size: 1.2em; text-shadow: 2px 2px #E8CECE; color: red; white-space: nowrap;"><i class="fa fa-clock-o"></i>&nbsp;限时团购！距离结束时间还有：<span id="getting-started"></span></div>
-                <dl class="pt10"><dt></br>价格阶梯</dt>
+				<div id="goods_countdown_timer" style="font-size: 1.2em; text-shadow: 2px 2px #E8CECE; color: red; white-space: nowrap;"><i class="fa fa-clock-o"></i>&nbsp;{$_LANG.groupbuy_alert}<span id="getting-started"></span></div>
+                <dl class="pt10"><dt></br>{$_LANG.price_ladder}</dt>
 			  		
 			  		
 					<dd class="f7">
@@ -128,19 +100,26 @@ function $id(element) {
 							<tr>
 								
 						  		<script type="text/javascript">
+								var t = "{$_LANG.dollar}";
+								var format;
+								if (t != '$')
+									format = '%-D天%H小时%M分%S秒';
+								else
+									format = '%-D days %H hours %M minutes %S seconds';
+								
 						  			var temp = "{$group_buy.formated_end_date}";
 						  			temp = temp.replace(/-/g, "/");
 						  		   	$("#getting-started").countdown(temp, function(event) {
 						  		    	$(this).text(
-						  		    	event.strftime('%-D天%H小时%M分%S秒')
+						  		    	event.strftime(format)
 						  		    	);
 						  		   }); 
 
 						  		</script>
 							</tr>
 							<tr>
-								<th style="text-align: center;">数量</th>
-								<th style="text-align: center;">优惠价格</th>
+								<th style="text-align: center;">{$_LANG.quantity}</th>
+								<th style="text-align: center;">{$_LANG.promotition_price}</th>
 							</tr>
 							<!--{foreach from=$volume_price_list item=val}-->
 							<tr>
@@ -162,12 +141,12 @@ function $id(element) {
 		<tr>
             <td style="width:40px;padding:0px 2px;margin-top:6px;font-size: 1.2em;">{$_LANG.number_to}</td>
             <td style="padding:0px 2px;"><span>
-                    <input name="number" type="text" title="请输入购买量" maxlength="8" value="1" class="input_quantity" onchange="changePrice()">
+                    <input name="number" type="text" title="{$_LANG.quantity_input_prompt}" maxlength="8" value="1" class="input_quantity" onchange="changePrice()">
                     <span class="quantity_adjust">
                         <span class="up"><div class="arrow-up"></div></span>
                         <span><div class="arrow-down"></div></span>
                     </span>
-                    <span class="piece">件</span>
+                    <span class="piece">{$_LANG.unit}</span>
                 </span>
             </td>
 		</tr>
@@ -175,7 +154,7 @@ function $id(element) {
         
         <div class="button_list">
             <div class="f_l mr10">
-                <a title="点击此按钮，到下一步确认购买信息。" href="javascript:addToCart1({$goods.goods_id},0,1)" class="buy_now hvr-bounce-to-right" onclick="getmousepos(event)"><i class="fa fa-shopping-cart"></i>&nbsp;{$_LANG.btn_direct_buy}</a>
+                <a title="{$_LANG.proceed_to_checkout}" href="javascript:addToCart1({$goods.goods_id},0,1)" class="buy_now hvr-bounce-to-right" onclick="getmousepos(event)"><i class="fa fa-shopping-cart"></i>&nbsp;{$_LANG.btn_direct_buy}</a>
             </div>
             <div class="f_l mr10"><a href="javascript:collect({$goods.goods_id});" class="bookmark hvr-bounce-to-right2"><i class="fa fa-heart"></i>&nbsp;{$_LANG.btn_collect}</a>
             </div>
@@ -183,7 +162,7 @@ function $id(element) {
             </div>
         </div>
         <dl class="pt20" style="">
-            <dt>分享</dt>
+            <dt>{$_LANG.share}</dt>
             <dd>
             	<div class="bdsharebuttonbox" ><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a></div>
             </dd>
@@ -204,7 +183,8 @@ function $id(element) {
      <!-- #BeginLibraryItem "/library/rel_goods.lbi" --><!-- #EndLibraryItem -->
      <!-- #BeginLibraryItem "/library/goods_pro.lbi" --><!-- #EndLibraryItem -->
     <div class="goods_desc">
-    	<div class="sign2">{$_LANG.goods_desc_h3}</div>
+		
+    	<div class="sign2"><div style="text-align:center; width: 110px; height: 55px; float: left">{$_LANG.goods_desc_h3}</div></div>
         {$goods.goods_desc}
 		
     </div>
@@ -213,7 +193,7 @@ function $id(element) {
 	{if $pictures_detail_section|@count gt 0}
 	<div class="blank"></div>
     <div class="goods_closeup">
-    	<div class="sign2">{$_LANG.goods_detail_h3}</div>
+    	<div class="sign2"><div style="text-align:center; width: 110px; height: 55px; float: left">{$_LANG.goods_detail_h3}</div></div>
 		<table border="0" cellspacing="0" cellpadding="0" style="width:100%;"> 
 		<tr height="10"><td></td></tr>		
 		
@@ -233,7 +213,7 @@ function $id(element) {
     <div class="blank"></div>
 	{if $goods_func|@count gt 0}
     <div class="goods_function">
-    	<div class="sign2">{$_LANG.goods_func_h3}</div>
+    	<div class="sign2"><div style="text-align:center; width: 110px; height: 55px; float: left">{$_LANG.goods_func_h3}</div></div>
         <ul>
 		{foreach from=$goods_func item=item }
             <li>
@@ -260,7 +240,7 @@ function $id(element) {
     <div class="blank"></div>
 	{if $goods_use|@count gt 0}
     <div class="goods_recipe">
-    	<div class="sign2">{$_LANG.goods_use_h3}</div>
+    	<div class="sign2"><div style="text-align:center; width: 110px; height: 55px; float: left">{$_LANG.goods_use_h3}</div></div>
         <div class="recipe_list">
         	<dl>
 			{foreach name=goods_use from=$goods_use item=item }

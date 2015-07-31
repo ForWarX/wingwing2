@@ -962,5 +962,14 @@ $_LANG['item_quantity'] = '件商品';
 $_LANG['subtotal'] = '合计：';
 $_LANG['continue_shopping'] = '继续购物';
 
+//goods.php
+$_LANG['free_shipping'] = '包邮';
+$_LANG['groupbuy_alert'] = '限时团购！距离结束时间还有：';
+$_LANG['price_ladder'] = '价格阶梯';
+$_LANG['share'] = '分享';
+$_LANG['proceed_to_checkout'] = '点击此按钮，到下一步确认购买信息。';
+$_LANG['quantity_input_prompt'] = '请输入购买量';
+$_LANG['promotition_price'] = '优惠价格';
+$_LANG['quantity'] = '数量';
 
 ?>

@@ -848,9 +848,9 @@ $_LANG['Preferences_price'] = 'Preferences price';
 $_LANG['divided_into'] = 'Into rules';
 
 /// goods.dwt //
-$_LANG['goods_related_h3'] = 'Related';
-$_LANG['goods_spec_h3'] = 'Spec.';
-$_LANG['goods_desc_h3'] = 'Desc.';
+$_LANG['goods_related_h3'] = 'Related Products';
+$_LANG['goods_spec_h3'] = 'Specification';
+$_LANG['goods_desc_h3'] = 'Description';
 $_LANG['goods_detail_h3'] = 'Detail';
 $_LANG['goods_func_h3'] = 'Function';
 $_LANG['goods_use_h3'] = 'Recipe';
@@ -956,4 +956,14 @@ $_LANG['shopping_cart'] = 'Quantity: ';
 $_LANG['item_quantity'] = 'items';
 $_LANG['subtotal'] = 'Subtotal: ';
 $_LANG['continue_shopping'] = 'Continue Shopping';
+
+//goods.php
+$_LANG['free_shipping'] = 'Free Shipping!';
+$_LANG['groupbuy_alert'] = 'Limited time group sale! Time left: ';
+$_LANG['price_ladder'] = 'Price Ladder';
+$_LANG['share'] = 'Share';
+$_LANG['proceed_to_checkout'] = 'Press this button to procced to billing information.';
+$_LANG['quantity_input_prompt'] = 'Please input the quantity';
+$_LANG['promotition_price'] = 'Promotion Price';
+$_LANG['quantity'] = 'Quantity: ';
 ?>

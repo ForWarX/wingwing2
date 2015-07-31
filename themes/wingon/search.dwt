@@ -43,7 +43,6 @@
 
 
 <div class="block clearfix" >
-
   <!--right start-->
   <div class="AreaR shadow" style="width: 100%;">
    <!-- {if isset($goods_list)} -->
@@ -60,7 +59,7 @@
          <!-- {elseif $intromode eq 'promotion'} -->
          {$lang.promotion_goods}
          <!-- {else} -->
-         {$_LANG.search_result} {$ur_here}
+         {$_LANG.search_result}: 
          <!-- {/if} -->
           <!--{if $goods_list}-->
           <span class="f_r">

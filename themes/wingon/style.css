@@ -3865,7 +3865,7 @@ border-color: transparent #5B3F1F transparent transparent;position:absolute;top:
 .rel_goods .wrap .switchable_panel .gname{text-align:center;}
 
 /*商品页-产品参数*/
-.sign2{background:url("images/sign3.png");width:100%;height:55px;color:#fff;font-size:1.5em;line-height:55px;padding-left:18px;}
+.sign2{background:url("images/sign3.png");width:100%;height:55px;color:#fff;font-size:1.5em;line-height:55px;}
 .sign2 ul{margin-top:10px;}
 .goods_spec li{display: inline;float: left;height: 18px;line-height: 18px;margin: 10px 40px 0 0;overflow: hidden;text-overflow: ellipsis;vertical-align: top; white-space: nowrap;width: 29.3%;font-size:1.2em;}
 .good-lower {
