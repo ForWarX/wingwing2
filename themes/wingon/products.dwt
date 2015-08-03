@@ -329,7 +329,7 @@
 			<!--{foreach from=$hot_goods item=hg}-->
 			<figure class="portfolio-item hot">
 				<div class="img-item"> <img src="/wingwing/{$hg.goods_img}" alt="" >
-				<div class="zoomex2"><h6>{$hg.name}<br><small>{$hg.shop_price}</small></h6><a href="/wingwing/{$hg.goods_img}" class="prettyPhoto zoomlink1" ><i class="icomoon-plus"></i></a><a href="portfolio-item.html" class="zoomlink2" ><i class="icomoon-arrow-right-5"></i></a></div></div>
+				<div class="zoomex2"><h6>{$hg.name}<br><small>{$hg.shop_price}</small></h6><a href="/wingwing/{$hg.original_img}" class="prettyPhoto zoomlink1" ><i class="icomoon-plus"></i></a><a href="goods.php?id={$hg.id}" class="zoomlink2" ><i class="icomoon-arrow-right-5"></i></a></div></div>
 					
 			</figure>
 			<!--{/foreach}-->
@@ -337,7 +337,7 @@
 			<!--{foreach from=$new_goods item=ng}-->
 			<figure class="portfolio-item new">
 				<div class="img-item"> <img src="/wingwing/{$ng.goods_img}" alt="" >
-				<div class="zoomex2"><h6>{$ng.name}<br><small>{$ng.shop_price}</small></h6><a href="/wingwing/{$ng.goods_img}" class="prettyPhoto zoomlink1" ><i class="icomoon-plus"></i></a><a href="portfolio-item.html" class="zoomlink2" ><i class="icomoon-arrow-right-5"></i></a></div></div>
+				<div class="zoomex2"><h6>{$ng.name}<br><small>{$ng.shop_price}</small></h6><a href="/wingwing/{$ng.original_img}" class="prettyPhoto zoomlink1" ><i class="icomoon-plus"></i></a><a href="goods.php?id={$ng.id}" class="zoomlink2" ><i class="icomoon-arrow-right-5"></i></a></div></div>
 					
 			</figure>
 			<!--{/foreach}-->
@@ -345,7 +345,7 @@
 			<!--{foreach from=$best_goods item=bg}-->
 			<figure class="portfolio-item best">
 				<div class="img-item"> <img src="/wingwing/{$bg.goods_img}" alt="" >
-				<div class="zoomex2"><h6>{$bg.name}<br><small>{$bg.shop_price}</small></h6><a href="/wingwing/{$bg.goods_img}" class="prettyPhoto zoomlink1" ><i class="icomoon-plus"></i></a><a href="portfolio-item.html" class="zoomlink2" ><i class="icomoon-arrow-right-5"></i></a></div></div>
+				<div class="zoomex2"><h6>{$bg.name}<br><small>{$bg.shop_price}</small></h6><a href="/wingwing/{$bg.original_img}" class="prettyPhoto zoomlink1" ><i class="icomoon-plus"></i></a><a href="goods.php?id={$bg.id}" class="zoomlink2" ><i class="icomoon-arrow-right-5"></i></a></div></div>
 					
 			</figure>
 			<!--{/foreach}-->

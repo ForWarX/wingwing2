@@ -972,4 +972,16 @@ $_LANG['quantity_input_prompt'] = '请输入购买量';
 $_LANG['promotition_price'] = '优惠价格';
 $_LANG['quantity'] = '数量';
 
+//flow.php
+$_LANG['continue_shopping'] = '继续购物';
+$_LANG['procced_to_checkout'] = '结算中心';
+$_LANG['drop_to_collect'] = '放入收藏夹';
+$_LANG['drop'] = '删除';
+$_LANG['goods_attribute'] = '属性';
+$_LANG['subtotoal_cart'] = '小计';
+$_LANG['clear_cart'] = '清空购物车';
+$_LANG['update_cart'] = '更新购物车';
+$_LANG['label_collection'] = '我的收藏';
+$_LANG['collect_to_flow'] = '立即购买';
+$_LANG['submit_order'] = '提交订单';
 ?>

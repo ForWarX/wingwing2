@@ -27,7 +27,7 @@ $_LANG['regist_success'] = "Congratulations! %s register successfully!";
 $_LANG['login_success'] = 'Congratulations! Login successfully!';
 
 /* 购物车 */
-$_LANG['update_cart'] = 'Update the cart';
+//$_LANG['update_cart'] = 'Update the cart';
 $_LANG['back_to_cart'] = 'Back to the cart';
 $_LANG['update_cart_notice'] = 'Update successfully, please choose the gift again.';
 $_LANG['direct_shopping'] = 'I don\'t plan to login, directly purchase.';
@@ -53,7 +53,7 @@ $_LANG['flow_no_shipping'] = 'Select one shipping method.';
 $_LANG['flow_no_payment'] = 'Please select a payment mode!';
 $_LANG['pay_not_exist'] = 'The payment mode is nonexistence.';
 $_LANG['storage_short'] = 'Out of stock';
-$_LANG['subtotal'] = 'Subtotal';
+//$_LANG['subtotal'] = 'Subtotal';
 $_LANG['accessories'] = 'Accessories';
 $_LANG['largess'] = 'Largess';
 $_LANG['shopping_money'] = 'Subtotal %s';
@@ -62,8 +62,8 @@ $_LANG['your_discount'] = 'Your discount is %s';
 $_LANG['no'] = 'No';
 $_LANG['not_support_virtual_goods'] = 'There is(are) virtual product(s), it is not support purchase without login, please login validly.';
 $_LANG['not_support_insure'] = 'No support insure.';
-$_LANG['clear_cart'] = 'Clear the cart.';
-$_LANG['drop_to_collect'] = 'Drop to collect.';
+//$_LANG['clear_cart'] = 'Clear the cart.';
+//$_LANG['drop_to_collect'] = 'Drop to collect.';
 $_LANG['password_js']['show_div_text'] = 'Please Update Cart';
 $_LANG['password_js']['show_div_exit'] = 'Close';
 $_LANG['goods_fittings'] = 'Goods Fittings';
@@ -91,8 +91,8 @@ $_LANG['pls_select_gift'] = 'Please select gift';
 $_LANG['gift_count_exceed'] = 'Gift quantity selected is maximizing';
 $_LANG['gift_in_cart'] = 'Gift in the cart: %s';
 $_LANG['label_favourable'] = 'Favourable';
-$_LANG['label_collection'] = 'Collection';
-$_LANG['collect_to_flow'] = 'Buy';
+//$_LANG['label_collection'] = 'Collection';
+//$_LANG['collect_to_flow'] = 'Buy';
 
 /* 登录注册 */
 $_LANG['forthwith_login'] = 'Login';

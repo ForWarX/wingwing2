@@ -25,7 +25,7 @@ $_LANG['regist_success'] = "恭喜您，%s 账号注册成功!";
 $_LANG['login_success'] = '恭喜！您已经成功登陆本站！';
 
 /* 购物车 */
-$_LANG['update_cart'] = '更新购物车';
+//$_LANG['update_cart'] = '更新购物车';
 $_LANG['back_to_cart'] = '返回购物车';
 $_LANG['update_cart_notice'] = '购物车更新成功，请您重新选择您需要的赠品。';
 $_LANG['direct_shopping'] = '不打算登录，直接购买';
@@ -51,7 +51,7 @@ $_LANG['flow_no_shipping'] = '您必须选定一个配送方式。';
 $_LANG['flow_no_payment'] = '您必须选定一个支付方式。';
 $_LANG['pay_not_exist'] = '选用的支付方式不存在。';
 $_LANG['storage_short'] = '库存不足';
-$_LANG['subtotal'] = '小计';
+//$_LANG['subtotal'] = '小计';
 $_LANG['accessories'] = '配件';
 $_LANG['largess'] = '赠品';
 $_LANG['shopping_money'] = '购物金额小计 %s';
@@ -60,8 +60,8 @@ $_LANG['your_discount'] = '根据优惠活动<a href="activity.php"><font color=
 $_LANG['no'] = '无';
 $_LANG['not_support_virtual_goods'] = '购物车中存在非实体商品,不支持匿名购买,请登陆后在购买';
 $_LANG['not_support_insure'] = '不支持保价';
-$_LANG['clear_cart'] = '清空购物车';
-$_LANG['drop_to_collect'] = '放入收藏夹';
+//$_LANG['clear_cart'] = '清空购物车';
+//$_LANG['drop_to_collect'] = '放入收藏夹';
 $_LANG['password_js']['show_div_text'] = '请点击更新购物车按钮';
 $_LANG['password_js']['show_div_exit'] = '关闭';
 $_LANG['goods_fittings'] = '商品相关配件';
@@ -89,8 +89,8 @@ $_LANG['pls_select_gift'] = '请选择赠品（特惠品）';
 $_LANG['gift_count_exceed'] = '您选择的赠品（特惠品）数量超过上限了';
 $_LANG['gift_in_cart'] = '您选择的赠品（特惠品）已经在购物车中了：%s';
 $_LANG['label_favourable'] = '优惠活动';
-$_LANG['label_collection'] = '我的收藏';
-$_LANG['collect_to_flow'] = '立即购买';
+//$_LANG['label_collection'] = '我的收藏';
+//$_LANG['collect_to_flow'] = '立即购买';
 
 /* 登录注册 */
 $_LANG['forthwith_login'] = '登录';

@@ -857,8 +857,8 @@ $_LANG['goods_use_h3'] = 'Recipe';
 
 /// page_header ///
 $_LANG['dear'] = 'Dear';
-$_LANG['login'] = 'log in';
-$_LANG['signup'] = 'sign Up';
+$_LANG['login'] = 'Log In';
+$_LANG['signup'] = 'Sign Up';
 $_LANG['welcomto'] = 'Welcome to Wingon';
 
 /// index.dwt ///
@@ -958,7 +958,7 @@ $_LANG['subtotal'] = 'Subtotal: ';
 $_LANG['continue_shopping'] = 'Continue Shopping';
 
 //goods.php
-$_LANG['free_shipping'] = 'Free Shipping!';
+$_LANG['free_shipping'] = 'Free Shipping';
 $_LANG['groupbuy_alert'] = 'Limited time group sale! Time left: ';
 $_LANG['price_ladder'] = 'Price Ladder';
 $_LANG['share'] = 'Share';
@@ -966,4 +966,17 @@ $_LANG['proceed_to_checkout'] = 'Press this button to procced to billing informa
 $_LANG['quantity_input_prompt'] = 'Please input the quantity';
 $_LANG['promotition_price'] = 'Promotion Price';
 $_LANG['quantity'] = 'Quantity: ';
+
+//flow.php
+$_LANG['continue_shopping'] = 'Continue Shopping';
+$_LANG['procced_to_checkout'] = 'Procced to Check Out';
+$_LANG['drop_to_collect'] = 'Add to Collection';
+$_LANG['drop'] = 'Delete';
+$_LANG['goods_attribute'] = 'Properties';
+$_LANG['subtotoal_cart'] = 'Subtotal';
+$_LANG['clear_cart'] = 'Clear Cart';
+$_LANG['update_cart'] = 'Refresh Cart';
+$_LANG['label_collection'] = 'My Collection';
+$_LANG['collect_to_flow'] = 'Buy Now';
+$_LANG['submit_order'] = 'Submit Order';
 ?>

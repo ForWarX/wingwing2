@@ -73,7 +73,7 @@ function $id(element) {
      <div class="textInfo">
      <form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
 		 <div class="clearfix title">
-      		<!--{if $goods.is_shipping eq 1}--><span style="color:#fff;background:#f23622;padding:0 5px;margin:0 5px 0 0;">{$_LANG.free_shipping}</span><!--{/if}-->{$goods.goods_name}
+      		<!--{if $goods.is_shipping eq 1}--><span class="label label-danger" style="margin-right: 5px;">{$_LANG.free_shipping}</span><!--{/if}-->{$goods.goods_name}
       	 </div>
       	<div class="price_panel" {if $is_promoted neq 1}style="height:70px !important;"{/if}>
         	<div class="f_l" id="f_l_goods">

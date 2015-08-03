@@ -9,6 +9,7 @@
 <!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link rel="stylesheet" href="themes/wingon/font-awesome/css/font-awesome.min.css">
 <link href="style.css" rel="stylesheet" type="text/css" />
 {* 包含脚本文件 *}
 {insert_scripts files='common.js,shopping_flow.js'}
@@ -22,148 +23,6 @@
 </script>
 </head>
 <body onload="formCart.reset();"><!-- #BeginLibraryItem "/library/page_header.lbi" -->
-<link href="library/themes/americo/style2.css" type="text/css" rel="stylesheet">
-<script type="text/javascript">
-var process_request = "{$lang.process_request}";
-</script>
-{insert_scripts files='jquery.js,jquery.json.js'}
-{insert_scripts files='transport_modified.js,region.js'}
-<div class="header">
-<div class="topNav ">
-<div id="topNavContent" align="center">
-	<span class="f_l"><i class="icomoon-phone-4"></i> 客服热线：<span style="font-weight:bold;"><!-- 客服电话{if $service_phone} -->
-{$service_phone} <!-- 结束客服电话{/if} --></span> | <a href="library/wholesale.php"><i class="icomoon-stack-plus"></i> B2B专区</a> | <a href="library/topic.php?topic_id=6"><i class="icomoon-paper-plane"></i> 体验馆</a></span>
-			<div class="cart" id="ECS_CARTINFO">
-			{insert name='cart_info'}
-            </div>
-            
-		   <div class="f_r log">
- <i class="icomoon-tag-8"></i><a href="library/user.php?act=order_list">我的订单</a>
- </div>
-           <div class="f_r" style=" margin-top:0;_margin-top:7px;">
-              {insert_scripts files='utils.js'}
-               <font id="ECS_MEMBERZONE">{* PBCC 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'} </font>
-                  <!--{if $navigator_list.top}-->
-                  <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->  
-                  <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a>
-                  <!-- {/foreach} --> <!-- {/if} -->
-          </div>
-          </div>
-                   </div>
-<div class="block" style=" position:relative; z-index:9999;">
-
-<div style="height: 80px;padding: 15px 10px;">
-<div style="position:absolute;"><a href="library/index.php"><img src="images/logo-final.png"></a></div>
-
-<div id="search"  style="position: absolute;margin-left: auto;margin-right: auto;left: 0;right: 0;">
-   
-  <form id="searchForm" name="searchForm" method="get" action="library/search.php" onSubmit="return checkSearchForm()"  >
-   <input name="keywords" type="text" id="keyword" placeholder="搜索  商品" class="B_input"/>
-   <input type="hidden" id="sc_ds" value="1" name="sc_ds">
-   <input type="hidden" id="category" value="0" name="category">
-   <input type="hidden" id="brand" value="0" name="brand">
-   <input id="min_price" type="hidden" value="0" name="min_price">
-   <input id="max_price" type="hidden" value="0" name="max_price">
-   <input type="hidden" id="outstock" value="0" name="outstock">
-   <input type="hidden" value="form" name="action">
-   <button type="submit" id="searchSubmit"><i class="icomoon-search-3"></i></button>
-   <div class="hot-search">
-   	<ul>
-        {if $searchkeywords}
-           {foreach from=$searchkeywords item=val}
-           	<li><a href="search.php?keywords={$val|escape:url}">{$val}</a></li>
-           {/foreach}
-       {/if}
-     </ul>
-    </div>
-    
-  
-   </form>
-   
-</div>
-<div class="giftCard"><img src="library/images/giftcard.gif"/></div>
-</div> 
- 
- </div> 
-<div class="g-menu">
-    <!--<div class="all-catalog" >
-      <a href="catalog.php" class="all-btn">所有商品分类<i class="arrow"></i></a>        
-    <div class="IndexAreaL">
-    {include file="/library/new_cat.lbi"} 
-  </div>
-    </div>-->
-	
-    <ul>
-      <li class="index-icon"> <a href="index.php" ><i class="icomoon-home-2"></i> 首页</a></li>
-        <!-- {foreach name=no from=$navigator_list.middle item=nav } -->
-      <li class="nav-sec"><a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if}    >{$nav.name}&nbsp;&nbsp;&nbsp;<!-- {if $nav.name eq '促销活动' || $nav.name eq '特别专区' || $nav.name eq '会员中心'}--><i class="icomoon-arrow-down-15"></i><!--{/if}--></a>
-      
-      <div class="dropdown">
-		<ul class="primary">
-        	<!-- {if $nav.name eq '促销活动'}-->
-			<li><i class="icomoon-arrow-right-17 navico"></i><a href="library/flyers/20141018" target="_blank">本周特价</a></li>
-			<li><i class="icomoon-arrow-right-17 navico"></i><a href="#">优惠券</a></li>
-            <!--{/if}-->
-            <!-- {if $nav.name eq '会员中心'}-->
-            <li><i class="icomoon-arrow-right-17 navico"></i><a href="#">“给福卡”绑定</a></li>
-			<li><i class="icomoon-arrow-right-17 navico"></i><a href="#">兑换中心</a></li>
-            <!--{/if}-->
-            <!-- {if $nav.name eq '特别专区'}-->
-            <li><i class="icomoon-arrow-right-17 navico"></i><a href="#">跨境购</a></li>
-			<li><i class="icomoon-arrow-right-17 navico"></i><a href="#">越洋购</a></li>
-            <li><i class="icomoon-arrow-right-17 navico"></i><a href="#">中国购</a></li>
-            <!--{/if}-->
-		</ul>
-	</div>
-     </li>
-<!-- {/foreach} -->
-
-
-</ul>
-<script language="javascript">
-	/*var obj11 = document.getElementsByClassName("g-menu")[0];
-	var srch = document.getElementById("search-form");
-	var top11 = getTop(obj11);
-	
-	var isIE6 = /msie 6/i.test(navigator.userAgent);
-window.onscroll = function(){
-var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-if (bodyScrollTop > top11){
-	
-
-obj11.style.position = (isIE6) ? "absolute" : "fixed";
-obj11.style.top = (isIE6) ? (bodyScrollTop) + "px" : "0px";
-	obj11.style.background = "none repeat scroll 0 0 rgba(249, 106, 100, 0.8)";
-	srch.style.visibility = "visible";
-	srch.style.opacity = "1";
-	} else {
-obj11.style.position = "inherit";
-obj11.style.top = "155px";
-obj11.style.zIndex = "9999";
-srch.style.visibility = "hidden";
-obj11.style.background = "none repeat scroll 0 0 rgba(249, 106, 100, 1)";
-}
-}
-function getTop(e){
-var offset = e.offsetTop;
-if(e.offsetParent != null) offset += getTop(e.offsetParent);
-return offset;
-} */
-$(document).ready(function(){
-	$(".nav-sec").hover(
-		function(){
-  		$(".dropdown",this).css('left','0px');
-		$(this).addClass('selected');
- 		}, 
-		function(){
-		$(".dropdown",this).css('left','-9999px');
-		$(this).removeClass('selected');
-		}
-	);
-	});
-</script>
-</div>
-</div>
 <!-- #EndLibraryItem --><!--当前位置 start--><!-- #BeginLibraryItem "/library/ur_here.lbi" -->
 <!-- #EndLibraryItem --><!--当前位置 end-->
 <div class="blank"></div>
@@ -181,18 +40,19 @@ $(document).ready(function(){
   <div class="flowBox shadow">
     <h6><span class="f8">{$lang.goods_list}</span></h6>
         <form id="formCart" name="formCart" method="post" action="flow.php">
-           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+           <!--<table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">-->
+		<table class="table table-hover shoppingTable">
             <tr>
               <th bgcolor="#ffffff">{$lang.goods_name}</th>
       <!-- {if $show_goods_attribute eq 1} 显示商品属性 -->
-              <th bgcolor="#ffffff">{$lang.goods_attr}</th>
+              <th bgcolor="#ffffff">{$_LANG.goods_attribute}</th>
               <!-- {/if} -->
               <!-- {if $show_marketprice} 显示市场价 -->
               <th bgcolor="#ffffff">{$lang.market_prices}</th>
               <!-- {/if} -->
               <th bgcolor="#ffffff">{$lang.shop_prices}</th>
               <th bgcolor="#ffffff">{$lang.number}</th>
-              <th bgcolor="#ffffff">{$lang.subtotal}</th>
+              <th bgcolor="#ffffff">{$lang.ws_subtotal}</th>
               <th bgcolor="#ffffff">{$lang.handle}</th>
             </tr>
             <!-- {foreach from=$goods_list item=goods} -->
@@ -204,8 +64,8 @@ $(document).ready(function(){
                   <!-- {elseif $show_goods_thumb eq 2} -->
                     <a href="goods.php?id={$goods.goods_id}" target="_blank"><img style="width:80px; height:80px;" src="{$goods.goods_thumb}" border="0" title="{$goods.goods_name|escape:html}" /></a>
                   <!-- {else} -->
-                    <div style="position:relative;width: 80px;"><a href="goods.php?id={$goods.goods_id}" target="_blank"><img style="width:80px; height:80px;" src="{$goods.goods_thumb}" border="0" title="{$goods.goods_name|escape:html}" /></a></div><br />
-                    <a href="goods.php?id={$goods.goods_id}" target="_blank">{$goods.goods_name}</a>
+                    <div style="height: 80px; text-align:left;"><a href="goods.php?id={$goods.goods_id}" target="_blank"><img style="width:80px; height:80px; position:absolute; left:0px" src="{$goods.goods_thumb}" border="0" title="{$goods.goods_name|escape:html}" /></a>
+                    <a href="goods.php?id={$goods.goods_id}" target="_blank" style="line-height:80px; margin-left:80px;">{$goods.goods_name}</a></div>
                   <!-- {/if} -->
                   <!-- {if $goods.parent_id gt 0} 配件 -->
                   <span style="color:#EF5A2C">（{$lang.accessories}）</span>
@@ -228,21 +88,21 @@ $(document).ready(function(){
               <td bgcolor="#ffffff">{$goods.goods_attr|nl2br}</td>
               <!-- {/if} -->
               <!-- {if $show_marketprice} 显示市场价 -->
-              <td align="right" bgcolor="#ffffff">{$goods.market_price}</td>
+              <td align="left" bgcolor="#ffffff">{$goods.market_price}</td>
               <!-- {/if} -->
-              <td align="right" bgcolor="#ffffff">{$goods.goods_price}</td>
-              <td align="right" bgcolor="#ffffff">
+              <td align="left" bgcolor="#ffffff">{$goods.goods_price}</td>
+              <td align="left" bgcolor="#ffffff">
                 <!-- {if $goods.goods_id gt 0 && $goods.is_gift eq 0 && $goods.parent_id eq 0} 普通商品可修改数量 -->
                 <input type="text" name="goods_number[{$goods.rec_id}]" id="goods_number_{$goods.rec_id}" value="{$goods.goods_number}" size="4" class="inputBg" style="text-align:center " onkeydown="showdiv(this)"/>
                 <!-- {else} -->
                 {$goods.goods_number}
                 <!-- {/if} -->
               </td>
-              <td align="right" bgcolor="#ffffff">{$goods.subtotal}</td>
-              <td align="center" bgcolor="#ffffff">
-                <a href="javascript:if (confirm('{$lang.drop_goods_confirm}')) location.href='flow.php?step=drop_goods&amp;id={$goods.rec_id}'; ">{$lang.drop}</a>
+              <td align="left" bgcolor="#ffffff">{$goods.subtotal}</td>
+              <td align="left" bgcolor="#ffffff">
+                <a href="javascript:if (confirm('{$lang.drop_goods_confirm}')) location.href='flow.php?step=drop_goods&amp;id={$goods.rec_id}'; "><span style="padding-right: 2px; font-size: 1.3em;"><i class="fa fa-times"></i></span>{$_LANG.drop}</a><br>
                 <!-- {if $smarty.session.user_id gt 0 && $goods.extension_code neq 'package_buy'} 如果登录了，可以加入收藏 -->
-                <a href="javascript:if (confirm('{$lang.drop_goods_confirm}')) location.href='flow.php?step=drop_to_collect&amp;id={$goods.rec_id}'; ">{$lang.drop_to_collect}</a>
+                <a href="javascript:if (confirm('{$lang.drop_goods_confirm}')) location.href='flow.php?step=drop_to_collect&amp;id={$goods.rec_id}'; "><span style="padding-right: 2px;"><i class="fa fa-heart"></i></span>{$_LANG.drop_to_collect}</a>
                 <!-- {/if} -->            </td>
             </tr>
             <!-- {/foreach} -->
@@ -254,17 +114,17 @@ $(document).ready(function(){
               {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!-- {/if} -->
               </td>
               <td align="right" bgcolor="#ffffff">
-                <input type="button" value="{$lang.clear_cart}" class="bnt_blue_1" onclick="location.href='flow.php?step=clear'" />
-                <input name="submit" type="submit" class="bnt_blue_1" value="{$lang.update_cart}"/>
+                <input type="button" value="{$_LANG.clear_cart}" class="btn btn-primary" onclick="location.href='flow.php?step=clear'" />
+                <input name="submit" type="submit" class="btn btn-primary" value="{$_LANG.update_cart}"/>
               </td>
             </tr>
           </table>
           <input type="hidden" name="step" value="update_cart" />
         </form>
         <table width="99%" align="center" border="0" cellpadding="5" cellspacing="0" bgcolor="#dddddd">
-          <tr>
-            <td bgcolor="#ffffff"><a href="./"><img src="images/continue.gif" alt="continue" /></a></td>
-            <td bgcolor="#ffffff" align="right"><a href="flow.php?step=checkout"><img src="images/checkout.gif" alt="checkout" /></a></td>
+          <tr >
+            <td bgcolor="#ffffff" style="padding-bottom:10px"><a href="products.php"><button type="button" class="btn btn-success btn-lg raised"><i class="fa fa-shopping-cart"></i> {$_LANG.continue_shopping}</button></a></td>
+            <td bgcolor="#ffffff" align="right" style="padding-bottom:10px"><a href="flow.php?step=checkout"><button type="button" class="btn btn-success btn-lg raised">{$_LANG.procced_to_checkout} <i class="fa fa-arrow-circle-right"></i></button></a></td>
           </tr>
         </table>
        <!-- {if $smarty.session.user_id gt 0} -->
@@ -317,12 +177,13 @@ $(document).ready(function(){
     <div class="blank"></div>
   <!-- {if $collection_goods} -->
   <div class="flowBox">
-    <h6><span>{$lang.label_collection}</span></h6>
+    <h6><span>{$_LANG.label_collection}</span></h6>
     <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
       <!-- {foreach from=$collection_goods item=goods} -->
           <tr>
             <td bgcolor="#ffffff"><a href="goods.php?id={$goods.goods_id}">{$goods.goods_name}</a></td>
-            <td bgcolor="#ffffff" align="center" width="100"><a href="javascript:addToCart({$goods.goods_id})">{$lang.collect_to_flow}</a></td>
+			<!--<td>{$goods.shop_price}</td>-->
+            <td bgcolor="#ffffff" align="center" width="100"><a href="javascript:addToCart({$goods.goods_id})">{$_LANG.collect_to_flow}</a></td>
           </tr>
       <!-- {/foreach} -->
         </table> 
@@ -485,7 +346,7 @@ $(document).ready(function(){
         var flow_no_shipping = "{$lang.flow_no_shipping}";
         </script>
         <div class="flowBox">
-        <h6><span>{$lang.goods_list}</span><!--{if $allow_edit_cart} --><a href="flow.php">{$lang.modify}</a><!--{/if} --></h6>
+        <h6><span>{$lang.goods_list}</span><!--{if $allow_edit_cart} --><div style="float: right;background-color: #93DEC4;position: absolute;right: 0px;padding-right: 10px;"><span><a href="flow.php" style="color: green;">{$lang.modify}</a></span></div><!--{/if} --></h6>
         <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
               <th bgcolor="#ffffff">{$lang.goods_name}</th>
@@ -523,9 +384,9 @@ $(document).ready(function(){
               <!-- {if $show_marketprice} -->
               <td align="right" bgcolor="#ffffff">{$goods.formated_market_price}</td>
               <!-- {/if} -->
-              <td bgcolor="#ffffff" align="right">{$goods.formated_goods_price}</td>
-              <td bgcolor="#ffffff" align="right">{$goods.goods_number}</td>
-              <td bgcolor="#ffffff" align="right">{$goods.formated_subtotal}</td>
+              <td bgcolor="#ffffff" align="left">{$goods.formated_goods_price}</td>
+              <td bgcolor="#ffffff" align="left">{$goods.goods_number}</td>
+              <td bgcolor="#ffffff" align="left">{$goods.formated_subtotal}</td>
             </tr>
             <!-- {/foreach} -->
             <!-- {if !$gb_deposit} 团购且有保证金时不显示 -->
@@ -541,7 +402,7 @@ $(document).ready(function(){
       </div>
       <div class="blank"></div>
       <div class="flowBox">
-      <h6><span>{$lang.consignee_info}</span><a href="flow.php?step=consignee">{$lang.modify}</a></h6>
+      <h6><span>{$lang.consignee_info}</span><div style="float: right;background-color: #93DEC4;position: absolute;right: 0px;padding-right: 10px;"><span><a href="flow.php" style="color: green;">{$lang.modify}</a></span></div></h6>
       <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
               <td bgcolor="#ffffff">{$lang.consignee_name}:</td>
@@ -592,9 +453,9 @@ $(document).ready(function(){
               </td>
               <td bgcolor="#ffffff" valign="top"><strong>{$shipping.shipping_name}</strong></td>
               <td bgcolor="#ffffff" valign="top">{$shipping.shipping_desc}</td>
-              <td bgcolor="#ffffff" align="right" valign="top">{$shipping.format_shipping_fee}</td>
-              <td bgcolor="#ffffff" align="right" valign="top">{$shipping.free_money}</td>
-              <td bgcolor="#ffffff" align="right" valign="top">{if $shipping.insure neq 0}{$shipping.insure_formated}{else}{$lang.not_support_insure}{/if}</td>
+              <td bgcolor="#ffffff" align="left" valign="top">{$shipping.format_shipping_fee}</td>
+              <td bgcolor="#ffffff" align="left" valign="top">{$shipping.free_money}</td>
+              <td bgcolor="#ffffff" align="left" valign="top">{if $shipping.insure neq 0}{$shipping.insure_formated}{else}{$lang.not_support_insure}{/if}</td>
             </tr>
             <!-- {/foreach} 循环配送方式 -->
             <tr>
@@ -616,7 +477,7 @@ $(document).ready(function(){
               <th width="5%" bgcolor="#ffffff">&nbsp;</th>
               <th width="20%" bgcolor="#ffffff">{$lang.name}</th>
               <th bgcolor="#ffffff">{$lang.describe}</th>
-              <th bgcolor="#ffffff" width="15%">{$lang.pay_fee}</th>
+              <th bgcolor="#ffffff" width="15%" style="text-align:center">{$lang.pay_fee}</th>
             </tr>
             <!-- {foreach from=$payment_list item=payment} -->
             <!-- 循环支付方式 -->
@@ -624,7 +485,7 @@ $(document).ready(function(){
               <td valign="top" bgcolor="#ffffff"><input type="radio" name="payment" value="{$payment.pay_id}" {if $order.pay_id eq $payment.pay_id}checked{/if} isCod="{$payment.is_cod}" kjAmount="{$kj_goods_amount}" kjTax="{$kj_goods_tax}" onclick="selectPayment(this)" {if $cod_disabled and $payment.is_cod eq "1"}disabled="true"{/if}/></td>
               <td valign="top" bgcolor="#ffffff"><img src="images/pay_{$payment.pay_code}.gif"/></td>
               <td valign="top" bgcolor="#ffffff">{$payment.pay_desc}</td>
-              <td align="right" bgcolor="#ffffff" valign="top">{$payment.format_pay_fee}</td>
+              <td align="center" bgcolor="#ffffff" valign="top">{$payment.format_pay_fee}</td>
             </tr>
             <!-- {/foreach} 循环支付方式 -->
             
@@ -803,7 +664,13 @@ $(document).ready(function(){
             <input type="hidden" name="kj_goods_weight" value="{$kj_goods_weight}"/>
             <input type="hidden" name="kj_goods_number" value="{$kj_goods_number}"/>
             <input type="hidden" name="kj_goods_tax" value="{$kj_goods_tax}"/>
-            <input type="image" src="images/bnt_subOrder.gif" />
+            
+		  <button type="submit" class="btn btn-success btn-lg raised" style="width:200px; margin-bottom: 10px;">
+
+				{$_LANG.submit_order}
+
+		  </button>
+			
             <input type="hidden" name="step" value="done" />
             
             </div>

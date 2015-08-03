@@ -59,7 +59,7 @@
          <!-- {elseif $intromode eq 'promotion'} -->
          {$lang.promotion_goods}
          <!-- {else} -->
-         {$_LANG.search_result}: 
+         {$_LANG.search_result}: {$search_p}
          <!-- {/if} -->
           <!--{if $goods_list}-->
           <span class="f_r">
