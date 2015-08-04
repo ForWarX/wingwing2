@@ -350,13 +350,13 @@
         <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
               <th bgcolor="#ffffff">{$lang.goods_name}</th>
-              <th bgcolor="#ffffff">{$lang.goods_attr}</th>
+              <th bgcolor="#ffffff">{$_LANG.goods_attribute}</th>
               <!-- {if $show_marketprice} -->
               <th bgcolor="#ffffff">{$lang.market_prices}</th>
               <!-- {/if} -->
               <th bgcolor="#ffffff">{if $gb_deposit}{$lang.deposit}{else}{$lang.shop_prices}{/if}</th>
               <th bgcolor="#ffffff">{$lang.number}</th>
-              <th bgcolor="#ffffff">{$lang.subtotal}</th>
+              <th bgcolor="#ffffff">{$_LANG.subtotoal_cart}</th>
             </tr>
             <!-- {foreach from=$goods_list item=goods} -->
 
@@ -391,10 +391,10 @@
             <!-- {/foreach} -->
             <!-- {if !$gb_deposit} 团购且有保证金时不显示 -->
             <tr>
-              <td bgcolor="#ffffff" colspan="7">
+              <td bgcolor="#ffffff" colspan="7" align="right" style="border-top-style:solid;">
               <!-- {if $discount gt 0} -->{$your_discount}<br /><!-- {/if} -->
-              {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!--{/if}-->
-              &nbsp;总重量：{$cart_weight_price.formated_weight}
+              {$_LANG.shopping_cart_money}{$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!--{/if}-->
+              &nbsp;{$_LANG.total_weight_of_cart}&nbsp;{$cart_weight_price.formated_weight}
               </td>
             </tr>
             <!-- {/if} -->

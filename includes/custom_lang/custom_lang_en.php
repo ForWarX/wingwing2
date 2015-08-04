@@ -979,4 +979,9 @@ $_LANG['update_cart'] = 'Refresh Cart';
 $_LANG['label_collection'] = 'My Collection';
 $_LANG['collect_to_flow'] = 'Buy Now';
 $_LANG['submit_order'] = 'Submit Order';
+$_LANG['total_weight_of_cart'] = 'Total Weight：';
+$_LANG['shopping_cart_money'] = 'Subtotal: ';
+
+
+
 ?>

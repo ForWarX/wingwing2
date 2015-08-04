@@ -54,7 +54,7 @@ $_LANG['storage_short'] = '库存不足';
 //$_LANG['subtotal'] = '小计';
 $_LANG['accessories'] = '配件';
 $_LANG['largess'] = '赠品';
-$_LANG['shopping_money'] = '购物金额小计 %s';
+//$_LANG['shopping_money'] = '购物金额小计 %s';
 $_LANG['than_market_price'] = '比市场价 %s 节省了 %s (%s)';
 $_LANG['your_discount'] = '根据优惠活动<a href="activity.php"><font color=red>%s</font></a>，您可以享受折扣 %s';
 $_LANG['no'] = '无';

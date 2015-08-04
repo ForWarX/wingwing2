@@ -984,4 +984,7 @@ $_LANG['update_cart'] = '更新购物车';
 $_LANG['label_collection'] = '我的收藏';
 $_LANG['collect_to_flow'] = '立即购买';
 $_LANG['submit_order'] = '提交订单';
+$_LANG['total_weight_of_cart'] = '总重量：';
+$_LANG['shopping_cart_money'] = '购物金额小计: ';
+
 ?>
