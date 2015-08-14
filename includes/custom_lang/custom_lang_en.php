@@ -979,9 +979,15 @@ $_LANG['update_cart'] = 'Refresh Cart';
 $_LANG['label_collection'] = 'My Collection';
 $_LANG['collect_to_flow'] = 'Buy Now';
 $_LANG['submit_order'] = 'Submit Order';
-$_LANG['total_weight_of_cart'] = 'Total Weight：';
+$_LANG['total_weight_of_cart'] = 'Total Weight: ';
 $_LANG['shopping_cart_money'] = 'Subtotal: ';
-
+$_LANG['use_balance'] = 'Balance';
+$_LANG['account_deposit'] = 'Deposit';
+$_LANG['avaliable_balance'] = 'Your avaliable balance: ';
+$_LANG['order_postscript'] = 'Additional Information';
+$_LANG['booking_process'] = 'Booking process';
+$_LANG['describe_shipping_method'] = 'Description';
+$_LANG['shopping_flow'] = 'Check Out';
 
 
 ?>

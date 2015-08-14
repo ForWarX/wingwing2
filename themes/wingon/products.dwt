@@ -30,12 +30,11 @@
 		<!-- #BeginLibraryItem "/library/index_category_tree.lbi" --><!-- #EndLibraryItem -->
 		<div id="products_first_row_wrap">
 	    	<div class="left_triple_ads" id="product_main_triple_ads">
-			
 			{foreach from=$group_buy_goods item=item key=key}
 			
 	        	<div style="background:url('{$item.img_url}'); font-size:200%; height: 33.33%; position: relative; overflow: hidden;">
-					<div><h5>{$item.short_name}</h5></div>
-					<!--<img src="{$item.goods_img}" alt="Smiley face" width="200"></img>-->
+					<div class=""><h5>{$item.short_name}</h5></div>
+					<img src="{$item.goods_img}" alt="Smiley face" width="200"></img>
 					<div class="gb_price">{$item.last_price}<span style="text-decoration: line-through; font-size: 14px; text-align: right;"><br>{$_LANG.ori_price}{$item.shop_price}</span></div>
 					<a href="{$item.url}" style="text-decoration:none;color: #ffffff!important;"><div class="gb_buy_button">{$_LANG.buynow}</div></a>
 					<div class="count_down_timer">{$_LANG.limittime_left}<span id="getting-started-{$key}"></span></div>
@@ -50,7 +49,8 @@
 
 			  		</script>
 				</div>
-			{/foreach}	
+			{/foreach}
+        	
 	        </div>
 		
 		<div id="product_main_slide" style=" width: 75%; height: 100%; font-size: 10em;">
@@ -72,7 +72,7 @@
 	                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
 	                //$SlideWidth: 788,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
 	                //$SlideHeight: 600,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
-	                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+	                $SlideSpacing: 5, 					                //[Optional] Space between each slide in pixels, default value is 0
 	                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
 	                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
 	                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
@@ -238,13 +238,14 @@
   
 							  
 							  {foreach from=$brand_logo.arry item=page_item key=page_key}
-							 	 <div style="width:100%">
+							 	 <div style="width:80%; height: 120px; background-color:darkgreen;">
 									 <table>
 				
 								  		<tr>
 										{foreach from=$page_item item=item key=key}
 										{if $item.brand_logo neq ''}
-								            <td><img u="image" alt="{$item.brand_name}" src="{$item.brand_logo}"  width="80"/></td>
+								            <td style="border-style:solid; border-color:darkgreen; border-width: 3px;"><img u="image" alt="{$item.brand_name}" src="{$item.brand_logo}"  width="80"/></td>
+											<td style="width:3px;"></td>
 											{else}
 											<td></td>
 										{/if}
@@ -328,8 +329,8 @@
 		<div class="portfolio" style="z-index: 0;">
 			<!--{foreach from=$hot_goods item=hg}-->
 			<figure class="portfolio-item hot">
-				<div class="img-item"> <img src="/wingwing/{$hg.goods_img}" alt="" >
-				<div class="zoomex2"><h6>{$hg.name}<br><small>{$hg.shop_price}</small></h6><a href="/wingwing/{$hg.original_img}" class="prettyPhoto zoomlink1" ><i class="icomoon-plus"></i></a><a href="goods.php?id={$hg.id}" class="zoomlink2" ><i class="icomoon-arrow-right-5"></i></a></div></div>
+				<div class="img-item"> <img src="{$hg.goods_img}" alt="" >
+				<div class="zoomex2"><h6>{$hg.name}<br><small>{$hg.shop_price}</small></h6><a href="{$hg.original_img}" class="prettyPhoto zoomlink1" ><i class="icomoon-plus"></i></a><a href="goods.php?id={$hg.id}" class="zoomlink2" ><i class="icomoon-arrow-right-5"></i></a></div></div>
 					
 			</figure>
 			<!--{/foreach}-->
@@ -383,7 +384,7 @@
 		  			allow_resize: true, 			/* Resize the photos bigger than viewport. true/false */
 		  			counter_separator_label: '/', 	/* The separator for the gallery counter 1 "of" 2 */
 		  			default_width: 940,
-		  			default_height: 529
+		  			default_height: 940
 		  		};
 
 		  		if(jQuery('a[href$=jpg], a[href$=JPG], a[href$=jpeg], a[href$=JPEG], a[href$=png], a[href$=gif], a[href$=bmp]:has(img), a[class^="prettyPhoto"]').length){

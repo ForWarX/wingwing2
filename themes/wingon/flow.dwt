@@ -109,7 +109,7 @@
           </table>
           <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
-              <td bgcolor="#ffffff">
+              <td bgcolor="#ffffff">{$_LANG.subtotoal_cart}
               <!-- {if $discount gt 0} -->{$your_discount}<br /><!-- {/if} -->
               {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!-- {/if} -->
               </td>
@@ -442,7 +442,7 @@
             <tr>
               <th bgcolor="#ffffff" width="5%">&nbsp;</th>
               <th bgcolor="#ffffff" width="25%">{$lang.name}</th>
-              <th bgcolor="#ffffff">{$lang.describe}</th>
+              <th bgcolor="#ffffff">{$_LANG.describe_shipping_method}</th>
               <th bgcolor="#ffffff" width="15%">{$lang.fee}</th>
               <th bgcolor="#ffffff" width="15%">{$lang.free_money}</th>
               <th bgcolor="#ffffff" width="15%">{$lang.insure_fee}</th>
@@ -594,9 +594,9 @@
       <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <!-- {if $allow_use_surplus} 是否使用余额 -->
             <tr>
-              <td width="20%" bgcolor="#ffffff"><strong>使用余额（<a href="user.php?act=account_deposit" style="color:#EF5A2C;">充值</a>）: </strong></td>
+              <td width="20%" bgcolor="#ffffff"><strong>{$_LANG.use_balance}（<a href="user.php?act=account_deposit" style="color:#EF5A2C;">{$_LANG.account_deposit}</a>）: </strong></td>
               <td bgcolor="#ffffff"><input name="surplus" type="text" class="inputBg" id="ECS_SURPLUS" size="10" value="{$order.surplus|default:0}" onblur="changeSurplus(this.value)" {if $disable_surplus}disabled="disabled"{/if} />
-              <span style="margin-left:12px;">您的余额： ￥{$your_surplus|default:0}</span> <span id="ECS_SURPLUS_NOTICE" class="notice" style="color:#EF5A2C;"></span></td>
+              <span style="margin-left:12px;">{$_LANG.avaliable_balance} ￥{$your_surplus|default:0}</span> <span id="ECS_SURPLUS_NOTICE" class="notice" style="color:#EF5A2C;"></span></td>
             </tr>
             <!-- {/if} 是否使用余额 -->
             <!-- {if $allow_use_bonus} 是否使用红包 -->

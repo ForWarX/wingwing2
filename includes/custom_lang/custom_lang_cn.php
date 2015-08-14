@@ -986,5 +986,12 @@ $_LANG['collect_to_flow'] = '立即购买';
 $_LANG['submit_order'] = '提交订单';
 $_LANG['total_weight_of_cart'] = '总重量：';
 $_LANG['shopping_cart_money'] = '购物金额小计: ';
+$_LANG['use_balance'] = '使用余额';
+$_LANG['account_deposit'] = '充值';
+$_LANG['avaliable_balance'] = '您的余额: ';
+$_LANG['order_postscript'] = '订单附言dd';
+$_LANG['booking_process'] = '缺货处理dd';
+$_LANG['describe_shipping_method'] = '订购描述';
+$_LANG['shopping_flow'] = '购物流程';
 
 ?>

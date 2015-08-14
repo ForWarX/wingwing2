@@ -316,8 +316,8 @@ $_LANG['invoice'] = 'Invoice';
 $_LANG['invoice_type'] = 'Invoice type';
 $_LANG['invoice_title'] = 'Invoice title';
 $_LANG['invoice_content'] = 'Invoice content';
-$_LANG['order_postscript'] = 'Order postscript';
-$_LANG['booking_process'] = 'Booking process';
+//$_LANG['order_postscript'] = 'Order postscript';
+//$_LANG['booking_process'] = 'Booking process';
 $_LANG['complete_acquisition'] = 'The order is completed, you will receive';
 $_LANG['with_price'] = 'and bonus';
 $_LANG['de'] = '';
@@ -335,7 +335,7 @@ $_LANG['order_gift_integral'] = 'Order %s integral gift';
 $_LANG['order_payed_sms'] = 'Hello, the order %s has already paid. Consignee: %s; Phone: %s.';
 
 /* 缺货处理 */
-$_LANG['oos'][OOS_WAIT] = 'Don\'t shipping until all products on deck.';
+$_LANG['oos'][OOS_WAIT] = 'Don\'t ship until all products on deck.';
 $_LANG['oos'][OOS_CANCEL] = 'Cancellation of order';
 $_LANG['oos'][OOS_CONSULT] = 'Consult with shop owner';
 

@@ -517,7 +517,15 @@ input[type=checkbox]:checked ~ #menu{
 }
 
 
+/*ABOUT US*/
 
+#about_1 {display:table;width:700px;margin:0 auto;}
+#about_1_tit{width:50%;float:left;font-size: 4em;
+  line-height: 1.10417;
+  font-weight: 200;}
+#about_1_txt {width:50%;float:left;font-size: 16px;
+  line-height: 1.75;
+  font-weight: 200;}
 
 
 
@@ -526,6 +534,32 @@ input[type=checkbox]:checked ~ #menu{
 
 
 /*Responsive Styles*/
+
+  @media screen and (max-width : 760px){
+
+  #about_1 {padding-top:11%; width:80%;}
+  #about_1_tit {width:100%;font-size:36px }
+  #about_1_txt {width:100%;margin-top:50px;}
+	#history1 {
+		
+	}
+	#history_p {
+		font-size:1.2em !important;
+	}
+	#our_brands {
+		padding-top:100px;
+	}
+	#get_partnered {
+		padding-top:100px;
+	}
+
+  }
+
+  @media screen and (max-width : 500px){
+  	#about_1_tit{font-size:28px;}
+  	#about_1_txt{font-size:14px;margin-top: 30px;}
+	
+  }
 
 @media screen and (max-width : 760px){
 	/*Make dropdown links appear inline*/
@@ -3458,15 +3492,19 @@ color: #c0c0c0;
 .left_triple_ads h5 {
     position: absolute;
     z-index: 1;
- 
-    left: 2px;
+ 	width: 100%;
+    left: 0px;
     top: 0px;
-    border-style: dotted;
-    border-color: brown;
-    border-radius: 10%;
+    color: white;
+	background-color: rgba(0,0,0,0.5);
     text-align: left;
     font-size: 18px;
     font-weight: bolder;
+	white-space: nowrap;
+	/*Overwrite Bootstrap*/
+	margin-top:0;
+	margin-bottom:0;
+	line-height: initial;
 }
  
 .left_triple_ads img {
@@ -3474,14 +3512,54 @@ color: #c0c0c0;
     bottom: 0px;
     align: center;
 }
- 
+
 .gb_price {
     font-size: 26px;
     position: absolute;
     right: 0px;
     bottom: 60px;
 }
- 
+
+/*Gift Label Style Start*/
+.gift-tag { // main body of tag
+  background: #cceef0;
+  border: #dcdcdc;
+  border-radius: 0 2px 2px 0;
+  color: #23bbce;
+  display: inline-block;
+  font-size: 20px;
+  height: 40px;
+  left: 0;
+  line-height: 40px;
+  margin: 20px;
+  padding: 0 10px 0 15px;
+  position: relative;
+  top: 0;
+}
+.gift-tag:before { // triangle shape on left
+  border-bottom: 20px transparent solid;
+  border-right: 12px #cceef0 solid;
+  border-top: 20px transparent solid;
+  content: '';
+  height: 0;
+  left: -12px;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+.gift-tag:after { // "hole"
+  background: white; // hole background
+  border: 2px #add solid; // hole border
+  border-radius: 50%;
+  content: '';
+  height: 6px;
+  left: 0;
+  position: absolute;
+  width: 6px;
+  top: 16px;
+}
+/*Gift Lable Style End*/
+
 .gb_buy_button {
     -webkit-border-top-left-radius: 20px;
     -moz-border-radius-topleft: 20px;
