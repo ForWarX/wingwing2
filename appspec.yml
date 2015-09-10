@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: source
+  - source: /
     destination: /var/www/html/wingon
 permissions:
   - object: /var/www/html/wingon
