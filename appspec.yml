@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: source
+    destination: /var/www/html/wingon
+permissions:
+  - object: /var/www/html/wingon
+    pattern: "**"
+    owner: ubuntu
+    mode: 777
