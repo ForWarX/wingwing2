@@ -1,6 +1,6 @@
 <?php
 // database host
-$db_host   = "localhost:8888";
+$db_host   = "localhost:3306";
 
 // database name
 $db_name   = "wingon";
@@ -9,7 +9,7 @@ $db_name   = "wingon";
 $db_user   = "root";
 
 // database password
-$db_pass   = "root";
+$db_pass   = "pbcc2015";
 
 // table prefix
 $prefix    = "ecs_";
